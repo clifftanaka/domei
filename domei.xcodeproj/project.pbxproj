@@ -13,9 +13,13 @@
 		91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */; };
 		91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4871E8AA9740022D220 /* Assets.xcassets */; };
 		91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */; };
+		91AFC4931E8AAB2E0022D220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */; };
+		EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CC45576B6A908A8719B2A1 /* Pods_domei.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36DDD712208C8363FF49AF4F /* Pods-domei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.release.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.release.xcconfig"; sourceTree = "<group>"; };
+		42CC45576B6A908A8719B2A1 /* Pods_domei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_domei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFC47A1E8AA9730022D220 /* domei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFC47D1E8AA9730022D220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AFC47F1E8AA9730022D220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		91AFC4871E8AA9740022D220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AFC48A1E8AA9740022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AFC48C1E8AA9740022D220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/domei/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81826FAB8329E6344673B45C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */,
+				36DDD712208C8363FF49AF4F /* Pods-domei.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8355E322A0FBFEDE45132D84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42CC45576B6A908A8719B2A1 /* Pods_domei.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91AFC4711E8AA9730022D220 = {
 			isa = PBXGroup;
 			children = (
 				91AFC47C1E8AA9730022D220 /* domei */,
 				91AFC47B1E8AA9730022D220 /* Products */,
+				81826FAB8329E6344673B45C /* Pods */,
+				8355E322A0FBFEDE45132D84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */,
 				91AFC48C1E8AA9740022D220 /* Info.plist */,
 				91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */,
+				91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */,
 			);
 			path = domei;
 			sourceTree = "<group>";
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91AFC48F1E8AA9740022D220 /* Build configuration list for PBXNativeTarget "domei" */;
 			buildPhases = (
+				D41984A263033AD41CE8BC8A /* [CP] Check Pods Manifest.lock */,
 				91AFC4761E8AA9730022D220 /* Sources */,
 				91AFC4771E8AA9730022D220 /* Frameworks */,
 				91AFC4781E8AA9730022D220 /* Resources */,
+				FEFE7E4A930561B1502E9C6C /* [CP] Embed Pods Frameworks */,
+				B1F8A8A1F3D6CACE530DB97F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,12 +158,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */,
+				91AFC4931E8AAB2E0022D220 /* GoogleService-Info.plist in Resources */,
 				91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */,
 				91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1F8A8A1F3D6CACE530DB97F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-domei/Pods-domei-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D41984A263033AD41CE8BC8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFE7E4A930561B1502E9C6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-domei/Pods-domei-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		91AFC4761E8AA9730022D220 /* Sources */ = {
@@ -263,6 +342,7 @@
 		};
 		91AFC4901E8AA9740022D220 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FYWFFZU43Q;
@@ -276,6 +356,7 @@
 		};
 		91AFC4911E8AA9740022D220 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36DDD712208C8363FF49AF4F /* Pods-domei.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FYWFFZU43Q;
