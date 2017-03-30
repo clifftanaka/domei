@@ -23,6 +23,9 @@
 		914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */; };
 		914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19711E8B88C20065BC76 /* GoogleService-Info.plist */; };
 		914A19741E8B8A5D0065BC76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19731E8B8A5D0065BC76 /* Info.plist */; };
+		91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B2F1E8CACFC0083F268 /* TimerViewController.swift */; };
+		91947B321E8CC5CD0083F268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B311E8CC5CD0083F268 /* Constants.swift */; };
+		91947B341E8CC9380083F268 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B331E8CC9380083F268 /* TimerButton.swift */; };
 		91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC47D1E8AA9730022D220 /* AppDelegate.swift */; };
 		91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4811E8AA9730022D220 /* Main.storyboard */; };
 		91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */; };
@@ -53,6 +56,9 @@
 		914A196F1E8B7A0B0065BC76 /* FirebaseAuthUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuthUI.framework; path = Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks/FirebaseAuthUI.framework; sourceTree = "<group>"; };
 		914A19711E8B88C20065BC76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		914A19731E8B8A5D0065BC76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91947B2F1E8CACFC0083F268 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		91947B311E8CC5CD0083F268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		91947B331E8CC9380083F268 /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
 		91AFC47A1E8AA9730022D220 /* domei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFC47D1E8AA9730022D220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AFC4821E8AA9730022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +121,15 @@
 			path = ../../../Documents/domei/Auth;
 			sourceTree = "<group>";
 		};
+		91947B351E8CD3770083F268 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91AFC4B41E8AAD570022D220 /* MainViewController.swift */,
+				91947B2F1E8CACFC0083F268 /* TimerViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		91AFC4711E8AA9730022D220 = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +151,12 @@
 		91AFC47C1E8AA9730022D220 /* domei */ = {
 			isa = PBXGroup;
 			children = (
+				91947B351E8CD3770083F268 /* ViewController */,
 				914A19521E8B69D50065BC76 /* Auth */,
 				914A194E1E8ABA260065BC76 /* domei.entitlements */,
 				91AFC47D1E8AA9730022D220 /* AppDelegate.swift */,
-				91AFC4B41E8AAD570022D220 /* MainViewController.swift */,
+				91947B331E8CC9380083F268 /* TimerButton.swift */,
+				91947B311E8CC5CD0083F268 /* Constants.swift */,
 				91AFC4811E8AA9730022D220 /* Main.storyboard */,
 				91AFC4871E8AA9740022D220 /* Assets.xcassets */,
 				91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */,
@@ -291,8 +308,11 @@
 				914A19641E8B69D60065BC76 /* FUICustomAuthUIDelegate.swift in Sources */,
 				914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */,
 				914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */,
+				91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */,
 				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
+				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
 				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
+				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,
 				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
