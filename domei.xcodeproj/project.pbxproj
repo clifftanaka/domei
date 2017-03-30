@@ -7,28 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A19531E8B69D50065BC76 /* FUIAuthViewController.swift */; };
+		914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A19541E8B69D50065BC76 /* FUICustomAuthPickerViewController.swift */; };
+		914A19631E8B69D60065BC76 /* FUICustomAuthPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19551E8B69D50065BC76 /* FUICustomAuthPickerViewController.xib */; };
+		914A19641E8B69D60065BC76 /* FUICustomAuthUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A19561E8B69D50065BC76 /* FUICustomAuthUIDelegate.swift */; };
+		914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A19571E8B69D50065BC76 /* FUICustomEmailEntryViewController.swift */; };
+		914A19661E8B69D60065BC76 /* FUICustomEmailEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19581E8B69D50065BC76 /* FUICustomEmailEntryViewController.xib */; };
+		914A19671E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A19591E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.swift */; };
+		914A19681E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A195A1E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.xib */; };
+		914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A195B1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.swift */; };
+		914A196A1E8B69D60065BC76 /* FUICustomPasswordSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A195C1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.xib */; };
+		914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A195D1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift */; };
+		914A196C1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A195E1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib */; };
+		914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A195F1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift */; };
+		914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */; };
+		914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19711E8B88C20065BC76 /* GoogleService-Info.plist */; };
+		914A19741E8B8A5D0065BC76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19731E8B8A5D0065BC76 /* Info.plist */; };
 		91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC47D1E8AA9730022D220 /* AppDelegate.swift */; };
-		91AFC4801E8AA9730022D220 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC47F1E8AA9730022D220 /* ViewController.swift */; };
 		91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4811E8AA9730022D220 /* Main.storyboard */; };
 		91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */; };
 		91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4871E8AA9740022D220 /* Assets.xcassets */; };
 		91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */; };
-		91AFC4931E8AAB2E0022D220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */; };
+		91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4B41E8AAD570022D220 /* MainViewController.swift */; };
 		EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CC45576B6A908A8719B2A1 /* Pods_domei.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36DDD712208C8363FF49AF4F /* Pods-domei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.release.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.release.xcconfig"; sourceTree = "<group>"; };
 		42CC45576B6A908A8719B2A1 /* Pods_domei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_domei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		914A194E1E8ABA260065BC76 /* domei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = domei.entitlements; sourceTree = "<group>"; };
+		914A19531E8B69D50065BC76 /* FUIAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUIAuthViewController.swift; sourceTree = "<group>"; };
+		914A19541E8B69D50065BC76 /* FUICustomAuthPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomAuthPickerViewController.swift; sourceTree = "<group>"; };
+		914A19551E8B69D50065BC76 /* FUICustomAuthPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomAuthPickerViewController.xib; sourceTree = "<group>"; };
+		914A19561E8B69D50065BC76 /* FUICustomAuthUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomAuthUIDelegate.swift; sourceTree = "<group>"; };
+		914A19571E8B69D50065BC76 /* FUICustomEmailEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomEmailEntryViewController.swift; sourceTree = "<group>"; };
+		914A19581E8B69D50065BC76 /* FUICustomEmailEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomEmailEntryViewController.xib; sourceTree = "<group>"; };
+		914A19591E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomPasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		914A195A1E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomPasswordRecoveryViewController.xib; sourceTree = "<group>"; };
+		914A195B1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomPasswordSignInViewController.swift; sourceTree = "<group>"; };
+		914A195C1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomPasswordSignInViewController.xib; sourceTree = "<group>"; };
+		914A195D1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomPasswordSignUpViewController.swift; sourceTree = "<group>"; };
+		914A195E1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomPasswordSignUpViewController.xib; sourceTree = "<group>"; };
+		914A195F1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUICustomPasswordVerificationViewController.swift; sourceTree = "<group>"; };
+		914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FUICustomPasswordVerificationViewController.xib; sourceTree = "<group>"; };
+		914A196F1E8B7A0B0065BC76 /* FirebaseAuthUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuthUI.framework; path = Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks/FirebaseAuthUI.framework; sourceTree = "<group>"; };
+		914A19711E8B88C20065BC76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		914A19731E8B8A5D0065BC76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91AFC47A1E8AA9730022D220 /* domei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFC47D1E8AA9730022D220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91AFC47F1E8AA9730022D220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		91AFC4821E8AA9730022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91AFC4851E8AA9730022D220 /* domei.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = domei.xcdatamodel; sourceTree = "<group>"; };
 		91AFC4871E8AA9740022D220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AFC48A1E8AA9740022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		91AFC48C1E8AA9740022D220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/domei/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91AFC4B41E8AAD570022D220 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,9 +87,32 @@
 		8355E322A0FBFEDE45132D84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				914A196F1E8B7A0B0065BC76 /* FirebaseAuthUI.framework */,
 				42CC45576B6A908A8719B2A1 /* Pods_domei.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		914A19521E8B69D50065BC76 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				914A19531E8B69D50065BC76 /* FUIAuthViewController.swift */,
+				914A19541E8B69D50065BC76 /* FUICustomAuthPickerViewController.swift */,
+				914A19551E8B69D50065BC76 /* FUICustomAuthPickerViewController.xib */,
+				914A19561E8B69D50065BC76 /* FUICustomAuthUIDelegate.swift */,
+				914A19571E8B69D50065BC76 /* FUICustomEmailEntryViewController.swift */,
+				914A19581E8B69D50065BC76 /* FUICustomEmailEntryViewController.xib */,
+				914A19591E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.swift */,
+				914A195A1E8B69D50065BC76 /* FUICustomPasswordRecoveryViewController.xib */,
+				914A195B1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.swift */,
+				914A195C1E8B69D50065BC76 /* FUICustomPasswordSignInViewController.xib */,
+				914A195D1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift */,
+				914A195E1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib */,
+				914A195F1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift */,
+				914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */,
+			);
+			name = Auth;
+			path = ../../../Documents/domei/Auth;
 			sourceTree = "<group>";
 		};
 		91AFC4711E8AA9730022D220 = {
@@ -82,14 +136,16 @@
 		91AFC47C1E8AA9730022D220 /* domei */ = {
 			isa = PBXGroup;
 			children = (
+				914A19521E8B69D50065BC76 /* Auth */,
+				914A194E1E8ABA260065BC76 /* domei.entitlements */,
 				91AFC47D1E8AA9730022D220 /* AppDelegate.swift */,
-				91AFC47F1E8AA9730022D220 /* ViewController.swift */,
+				91AFC4B41E8AAD570022D220 /* MainViewController.swift */,
 				91AFC4811E8AA9730022D220 /* Main.storyboard */,
 				91AFC4871E8AA9740022D220 /* Assets.xcassets */,
 				91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */,
-				91AFC48C1E8AA9740022D220 /* Info.plist */,
 				91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */,
-				91AFC4921E8AAB2E0022D220 /* GoogleService-Info.plist */,
+				914A19731E8B8A5D0065BC76 /* Info.plist */,
+				914A19711E8B88C20065BC76 /* GoogleService-Info.plist */,
 			);
 			path = domei;
 			sourceTree = "<group>";
@@ -131,6 +187,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = FYWFFZU43Q;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -158,8 +219,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */,
-				91AFC4931E8AAB2E0022D220 /* GoogleService-Info.plist in Resources */,
+				914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */,
+				914A19661E8B69D60065BC76 /* FUICustomEmailEntryViewController.xib in Resources */,
+				914A196A1E8B69D60065BC76 /* FUICustomPasswordSignInViewController.xib in Resources */,
+				914A19631E8B69D60065BC76 /* FUICustomAuthPickerViewController.xib in Resources */,
+				914A19681E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.xib in Resources */,
 				91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */,
+				914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */,
+				914A19741E8B8A5D0065BC76 /* Info.plist in Resources */,
+				914A196C1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib in Resources */,
 				91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91AFC4801E8AA9730022D220 /* ViewController.swift in Sources */,
+				914A19671E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.swift in Sources */,
+				914A19641E8B69D60065BC76 /* FUICustomAuthUIDelegate.swift in Sources */,
+				914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */,
+				914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */,
+				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
+				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,
+				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
+				914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */,
+				914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +421,12 @@
 			baseConfigurationReference = D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
 				DEVELOPMENT_TEAM = FYWFFZU43Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
+				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
@@ -359,7 +440,12 @@
 			baseConfigurationReference = 36DDD712208C8363FF49AF4F /* Pods-domei.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
 				DEVELOPMENT_TEAM = FYWFFZU43Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
+				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
@@ -387,6 +473,7 @@
 				91AFC4911E8AA9740022D220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

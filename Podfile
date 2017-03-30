@@ -10,5 +10,9 @@ target 'domei' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Facebook'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Twitter'
 
 end
