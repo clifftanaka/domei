@@ -23,6 +23,7 @@
 		914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */; };
 		914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19711E8B88C20065BC76 /* GoogleService-Info.plist */; };
 		914A19741E8B8A5D0065BC76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19731E8B8A5D0065BC76 /* Info.plist */; };
+		914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CB2FA1E8F876300600FE3 /* TimerLog.swift */; };
 		91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B2F1E8CACFC0083F268 /* TimerViewController.swift */; };
 		91947B321E8CC5CD0083F268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B311E8CC5CD0083F268 /* Constants.swift */; };
 		91947B341E8CC9380083F268 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B331E8CC9380083F268 /* TimerButton.swift */; };
@@ -32,6 +33,9 @@
 		91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4871E8AA9740022D220 /* Assets.xcassets */; };
 		91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */; };
 		91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4B41E8AAD570022D220 /* MainViewController.swift */; };
+		91DA98AA1E8D028A00801C59 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA98A91E8D028A00801C59 /* CellView.xib */; };
+		91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AB1E8D02E200801C59 /* CellView.swift */; };
+		91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AD1E8D05E700801C59 /* LogViewController.swift */; };
 		EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CC45576B6A908A8719B2A1 /* Pods_domei.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,7 @@
 		914A196F1E8B7A0B0065BC76 /* FirebaseAuthUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuthUI.framework; path = Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks/FirebaseAuthUI.framework; sourceTree = "<group>"; };
 		914A19711E8B88C20065BC76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		914A19731E8B8A5D0065BC76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		914CB2FA1E8F876300600FE3 /* TimerLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLog.swift; sourceTree = "<group>"; };
 		91947B2F1E8CACFC0083F268 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		91947B311E8CC5CD0083F268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91947B331E8CC9380083F268 /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 		91AFC4871E8AA9740022D220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AFC48A1E8AA9740022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AFC4B41E8AAD570022D220 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		91DA98A91E8D028A00801C59 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		91DA98AB1E8D02E200801C59 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		91DA98AD1E8D05E700801C59 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,11 +129,20 @@
 			path = ../../../Documents/domei/Auth;
 			sourceTree = "<group>";
 		};
+		914CB2F91E8F875700600FE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				914CB2FA1E8F876300600FE3 /* TimerLog.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		91947B351E8CD3770083F268 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				91AFC4B41E8AAD570022D220 /* MainViewController.swift */,
 				91947B2F1E8CACFC0083F268 /* TimerViewController.swift */,
+				91DA98AD1E8D05E700801C59 /* LogViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -151,6 +168,8 @@
 		91AFC47C1E8AA9730022D220 /* domei */ = {
 			isa = PBXGroup;
 			children = (
+				914CB2F91E8F875700600FE3 /* Models */,
+				91DA98A81E8D026100801C59 /* CalendarView */,
 				91947B351E8CD3770083F268 /* ViewController */,
 				914A19521E8B69D50065BC76 /* Auth */,
 				914A194E1E8ABA260065BC76 /* domei.entitlements */,
@@ -165,6 +184,15 @@
 				914A19711E8B88C20065BC76 /* GoogleService-Info.plist */,
 			);
 			path = domei;
+			sourceTree = "<group>";
+		};
+		91DA98A81E8D026100801C59 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				91DA98A91E8D028A00801C59 /* CellView.xib */,
+				91DA98AB1E8D02E200801C59 /* CellView.swift */,
+			);
+			name = CalendarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +267,7 @@
 				914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */,
 				914A19661E8B69D60065BC76 /* FUICustomEmailEntryViewController.xib in Resources */,
 				914A196A1E8B69D60065BC76 /* FUICustomPasswordSignInViewController.xib in Resources */,
+				91DA98AA1E8D028A00801C59 /* CellView.xib in Resources */,
 				914A19631E8B69D60065BC76 /* FUICustomAuthPickerViewController.xib in Resources */,
 				914A19681E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.xib in Resources */,
 				91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */,
@@ -307,15 +336,18 @@
 				914A19671E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.swift in Sources */,
 				914A19641E8B69D60065BC76 /* FUICustomAuthUIDelegate.swift in Sources */,
 				914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */,
+				91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */,
 				914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */,
 				91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */,
 				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
 				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
+				914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */,
 				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
 				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,
 				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
+				91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */,
 				914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */,
 				914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */,
 			);

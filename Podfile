@@ -14,5 +14,5 @@ target 'domei' do
   pod 'FirebaseUI/Facebook'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Twitter'
-
+  pod 'JTAppleCalendar', '~> 6.0'
 end

@@ -21,21 +21,21 @@ extension UIButton {
             self.setTitle("Start", for: UIControlState.normal)
             self.setTitleColor(UIColor.white, for: UIControlState.normal)
             //background
-            self.backgroundColor = UIColor(colorLiteralRed: 76.0/255.0, green: 217.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+            self.backgroundColor = Constants.timerGreen
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = ((UIColor(colorLiteralRed: 116.0/255.0, green: 242.0/255.0, blue: 131.0/255.0, alpha: 1.0)) as UIColor).cgColor
+            self.layer.borderColor = Constants.timerLightGreen.cgColor
             break
             
         case Constants.statusStarted:
             //title
             self.setTitle("Stop", for: UIControlState.normal)
-            self.setTitleColor(UIColor(colorLiteralRed: 76.0/255.0, green: 217.0/255.0, blue: 100.0/255.0, alpha: 1.0), for: UIControlState.normal)
+            self.setTitleColor(Constants.timerGreen, for: UIControlState.normal)
             //background
             self.backgroundColor = UIColor.white
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = (UIColor(colorLiteralRed: 76.0/255.0, green: 217.0/255.0, blue: 100.0/255.0, alpha: 1.0) as UIColor).cgColor
+            self.layer.borderColor = Constants.timerGreen.cgColor
             break
             
         default: break
@@ -52,22 +52,22 @@ extension UIButton {
              Constants.statusStarted:
             self.isEnabled = false
             //title
-            self.setTitleColor(UIColor(colorLiteralRed: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), for: UIControlState.normal)
+            self.setTitleColor(Constants.timerGrey, for: UIControlState.normal)
             //background
             self.backgroundColor = UIColor.white
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = (UIColor(colorLiteralRed: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0) as UIColor).cgColor
+            self.layer.borderColor = Constants.timerGrey.cgColor
             break
         case Constants.statusStopped:
             self.isEnabled = true
             //title
-            self.setTitleColor(UIColor(colorLiteralRed: 255.0/255.0, green: 59.0/255.0, blue: 48.0/255.0, alpha: 1.0), for: UIControlState.normal)
+            self.setTitleColor(Constants.timerRed, for: UIControlState.normal)
             //background
             self.backgroundColor = UIColor.white
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = UIColor(colorLiteralRed: 255.0/255.0, green: 59.0/255.0, blue: 48.0/255.0, alpha: 1.0).cgColor
+            self.layer.borderColor = Constants.timerRed.cgColor
             break
         
         default: break
@@ -84,22 +84,22 @@ extension UIButton {
              Constants.statusStarted:
             self.isEnabled = false
             //title
-            self.setTitleColor(UIColor(colorLiteralRed: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), for: UIControlState.normal)
+            self.setTitleColor(Constants.timerGrey, for: UIControlState.normal)
             //background
             self.backgroundColor = UIColor.white
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = (UIColor(colorLiteralRed: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0) as UIColor).cgColor
+            self.layer.borderColor = Constants.timerGrey.cgColor
             break
         case Constants.statusStopped:
             self.isEnabled = true
             //title
-            self.setTitleColor(UIColor(colorLiteralRed: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0), for: UIControlState.normal)
+            self.setTitleColor(Constants.timerBlue, for: UIControlState.normal)
             //background
             self.backgroundColor = UIColor.white
             //border
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = (UIColor(colorLiteralRed: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0) as UIColor).cgColor
+            self.layer.borderColor = Constants.timerBlue.cgColor
             break
             
         default: break

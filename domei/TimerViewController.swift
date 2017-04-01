@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class TimerViewController: UIViewController {
-    
     
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var minLabel: UILabel!
@@ -22,11 +23,18 @@ class TimerViewController: UIViewController {
     
     var status : Int = Constants.statusReset
     var timer = Timer()
+    var totalTime = TimeInterval()
     var startTime = TimeInterval()
+    var pausedTime = TimeInterval()
+    var pausedInterval = 0.0
     var isPaused : Bool = false
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:MM:ss"
         
         updatePaused(false)
         updateButtons()
@@ -43,6 +51,9 @@ class TimerViewController: UIViewController {
             let actionSelector : Selector = #selector(TimerViewController.updateTime)
             if !isPaused {
                 startTime = NSDate.timeIntervalSinceReferenceDate
+                pausedInterval = 0.0
+            } else {
+                pausedInterval += (NSDate.timeIntervalSinceReferenceDate - pausedTime)
             }
             timer = Timer.scheduledTimer(timeInterval: 0.01, target:self, selector:actionSelector, userInfo: nil, repeats: true)
         }
@@ -50,6 +61,7 @@ class TimerViewController: UIViewController {
     }
     
     func pause() {
+        pausedTime = NSDate.timeIntervalSinceReferenceDate
         updatePaused(true)
         timer.invalidate()
     }
@@ -59,6 +71,10 @@ class TimerViewController: UIViewController {
         updatePaused(false)
         timer.invalidate()
         timer == nil
+        hourLabel.text = "00"
+        minLabel.text = "00"
+        secLabel.text = "00"
+        msLabel.text = "00"
     }
     
     func updatePaused(_ isP: Bool) {
@@ -70,7 +86,8 @@ class TimerViewController: UIViewController {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         
         // Find the difference between current time and strart time
-        var elapsedTime: TimeInterval = currentTime - startTime
+        totalTime = currentTime - startTime - pausedInterval
+        var elapsedTime = totalTime
         
         // calculate the hours in elapsed time
         let hours = UInt8(elapsedTime / 360.0)
@@ -130,7 +147,19 @@ class TimerViewController: UIViewController {
             reset()
             status = Constants.statusReset
         }
+        logData()
         updateButtons()
+    }
+    
+    func logData() {
+        let user = FIRAuth.auth()!.currentUser!
+        
+        let log = [
+            "interval" : "\(totalTime)",
+            "timeStamp" : dateFormatter.string(from: Date())
+        ]
+        FIRDatabase.database().reference().child("users").child(user.uid).child("timerLogs").childByAutoId().setValue(log)
+        
     }
     
 }
