@@ -24,6 +24,8 @@
 		914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19711E8B88C20065BC76 /* GoogleService-Info.plist */; };
 		914A19741E8B8A5D0065BC76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19731E8B8A5D0065BC76 /* Info.plist */; };
 		914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CB2FA1E8F876300600FE3 /* TimerLog.swift */; };
+		914CB2FF1E90AF0500600FE3 /* TimerLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CB2FE1E90AF0500600FE3 /* TimerLogs.swift */; };
+		915D1C411E924ED800B790F7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D1C401E924ED800B790F7 /* CustomCell.swift */; };
 		91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B2F1E8CACFC0083F268 /* TimerViewController.swift */; };
 		91947B321E8CC5CD0083F268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B311E8CC5CD0083F268 /* Constants.swift */; };
 		91947B341E8CC9380083F268 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B331E8CC9380083F268 /* TimerButton.swift */; };
@@ -61,6 +63,8 @@
 		914A19711E8B88C20065BC76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		914A19731E8B8A5D0065BC76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		914CB2FA1E8F876300600FE3 /* TimerLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLog.swift; sourceTree = "<group>"; };
+		914CB2FE1E90AF0500600FE3 /* TimerLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLogs.swift; sourceTree = "<group>"; };
+		915D1C401E924ED800B790F7 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		91947B2F1E8CACFC0083F268 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		91947B311E8CC5CD0083F268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91947B331E8CC9380083F268 /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				914CB2FA1E8F876300600FE3 /* TimerLog.swift */,
+				914CB2FE1E90AF0500600FE3 /* TimerLogs.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */,
 				914A19731E8B8A5D0065BC76 /* Info.plist */,
 				914A19711E8B88C20065BC76 /* GoogleService-Info.plist */,
+				915D1C401E924ED800B790F7 /* CustomCell.swift */,
 			);
 			path = domei;
 			sourceTree = "<group>";
@@ -336,10 +342,12 @@
 				914A19671E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.swift in Sources */,
 				914A19641E8B69D60065BC76 /* FUICustomAuthUIDelegate.swift in Sources */,
 				914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */,
+				914CB2FF1E90AF0500600FE3 /* TimerLogs.swift in Sources */,
 				91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */,
 				914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */,
 				91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */,
 				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
+				915D1C411E924ED800B790F7 /* CustomCell.swift in Sources */,
 				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
 				914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */,
 				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
