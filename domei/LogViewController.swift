@@ -34,16 +34,15 @@ class LogViewController: UIViewController {
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
         calendarView.cellInset = CGPoint(x: 0, y: 0)
-        calendarView.scrollToDate(Date())
         dateFormatter.dateFormat = "YYYY/MM/dd"
         
         tableView.dataSource = self
         tableView.delegate = self
         
+        // 365 days since startDate
         startDate = dateFormatter.date(from: "2017/01/01")!
         var incrementDate = startDate
         let endDate = dateFormatter.date(from: "2017/12/31")
-        
         while incrementDate.compare(endDate!) != ComparisonResult.orderedSame {
             let key = dateFormatter.string(from: incrementDate)
             calendarHeader.append(key)
@@ -53,6 +52,8 @@ class LogViewController: UIViewController {
             
             incrementDate = currentCalendar.date(byAdding: .day, value: 1, to: incrementDate)!
         }
+        
+        // get data from firebase
         FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("timerLogs").queryOrdered(byChild: "timeStamp").observe(FIRDataEventType.childAdded, with: { (snapshot) in
             
             let log = TimerLog()
@@ -73,17 +74,7 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func todayTapped(_ sender: Any) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        let date = currentCalendar.startOfDay(for: Date())
-        calendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: true, preferredScrollPosition: UICollectionViewScrollPosition.top) {
-            //<#code#>
-        }
-        
-        calendarView.deselectAllDates()
-        calendarView.selectDates([date])
-        
-        self.jumpToSection(startDate: startDate, endDate: date)
+        jumpToDate(date: Date())
     }
     
     func calculateDaysBetweenTwoDates(start: Date, end: Date) -> Int {
@@ -97,6 +88,22 @@ class LogViewController: UIViewController {
         return end - start
     }
     
+    // logic that comes along with tapping to a particular date
+    func jumpToDate(date: Date) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let date = currentCalendar.startOfDay(for: date)
+        // caledar scrolling
+        calendarView.scrollToDate(date)
+        
+        // onSelect stuff
+        calendarView.deselectAllDates()
+        calendarView.selectDates([date])
+        
+        // section scrolling
+        jumpToSection(startDate: startDate, endDate: date)
+    }
+    
 }
 
 extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
@@ -106,10 +113,12 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCustomCell", for: indexPath) as! CustomCell
+        
+        // display for days that contain a log
         if allData[indexPath.section].count > 0 {
             let log = allData[indexPath.section][indexPath.row]
             var elapsedTime = log.interval
-            print(log.interval)
+            
             // calculate the hours in elapsed time
             let hours = UInt8(elapsedTime / 3600.0)
             elapsedTime -= (TimeInterval(hours) * 3600)
@@ -117,16 +126,16 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
             // calculate the minutes in elapsed time
             let minutes = UInt8(elapsedTime / 60.0)
             
-            cell.hourLabel?.text = "\(hours)"
-            cell.minLabel?.text = "\(minutes)"
-            print(hours)
-            print(minutes)
-            
-            let finishedAt = log.timeStamp
+            // date converstion costly, using substring based on format: YYYY-MM-dd HH:mm:ss
+            var finishedAt = log.timeStamp
             let start = finishedAt.index(finishedAt.startIndex, offsetBy: 10)
             let end = finishedAt.index(finishedAt.endIndex, offsetBy: -3)
             let range = start..<end
-            cell.finishedAtLabel?.text = finishedAt.substring(with: range)
+            finishedAt = finishedAt.substring(with: range)
+            
+            cell.hourLabel?.text = "\(hours)"
+            cell.minLabel?.text = "\(minutes)"
+            cell.finishedAtLabel?.text = finishedAt
         }
         return cell
     }
@@ -182,6 +191,7 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
         handleCellSelection(view: cell, cellState: cellState, date: date)
         
         jumpToSection(startDate: startDate, endDate: date)
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -190,6 +200,7 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        //change the month and year after scrolling through months
         if !visibleDates.outdates.isEmpty {
             let date = visibleDates.monthDates[0]
             let year = currentCalendar.component(.year, from: date)
@@ -235,9 +246,11 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
         }
     }
     
+    // scroll to appropriate section
     func jumpToSection(startDate: Date, endDate: Date) {
         let numOfDates = calculateDaysBetweenTwoDates(start: startDate, end: endDate)
         var row = 0
+        //some sections contain 0 rows
         if allData[numOfDates].count == 0 {
             row = NSNotFound
         }
