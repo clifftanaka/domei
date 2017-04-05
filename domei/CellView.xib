@@ -21,17 +21,57 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-sY-IRn">
+                    <rect key="frame" x="84" y="54" width="3" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="1" green="0.55580785990000003" blue="0.35690170339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFH-eH-Kt3">
+                    <rect key="frame" x="87" y="54" width="12" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="1" green="0.55580785990000003" blue="0.35690170339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="9WT-GD-BbL">
+                    <rect key="frame" x="62" y="55.5" width="8" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="Ywj-yP-gzB"/>
+                        <constraint firstAttribute="height" constant="8" id="auC-Tb-pia"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-oQ-tqp">
+                    <rect key="frame" x="72" y="54" width="11.5" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="1" green="0.55580785990000003" blue="0.35690170339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="3j4-oQ-tqp" firstAttribute="centerY" secondItem="Uw7-sY-IRn" secondAttribute="centerY" id="1PR-Z3-2Z9"/>
+                <constraint firstItem="Uw7-sY-IRn" firstAttribute="leading" secondItem="3j4-oQ-tqp" secondAttribute="trailing" id="5tV-CC-QVC"/>
+                <constraint firstItem="Uw7-sY-IRn" firstAttribute="centerY" secondItem="xFH-eH-Kt3" secondAttribute="centerY" id="IbO-hw-2Y1"/>
                 <constraint firstAttribute="trailing" secondItem="8po-JK-dMy" secondAttribute="trailing" constant="5" id="Lox-a6-uND"/>
+                <constraint firstItem="9WT-GD-BbL" firstAttribute="centerY" secondItem="3j4-oQ-tqp" secondAttribute="centerY" id="QyB-fD-zds"/>
+                <constraint firstItem="3j4-oQ-tqp" firstAttribute="leading" secondItem="9WT-GD-BbL" secondAttribute="trailing" constant="2" id="TCU-8c-VnB"/>
                 <constraint firstItem="8po-JK-dMy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="Wsc-DM-hBd"/>
+                <constraint firstItem="xFH-eH-Kt3" firstAttribute="leading" secondItem="Uw7-sY-IRn" secondAttribute="trailing" id="dqD-HF-pzV"/>
+                <constraint firstAttribute="trailing" secondItem="xFH-eH-Kt3" secondAttribute="trailing" constant="5" id="pZO-13-SdX"/>
+                <constraint firstAttribute="bottom" secondItem="xFH-eH-Kt3" secondAttribute="bottom" constant="5" id="vah-WE-4cY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cellViewColonLabel" destination="Uw7-sY-IRn" id="LmH-Ly-xEc"/>
+                <outlet property="cellViewHourLabel" destination="3j4-oQ-tqp" id="5vk-ej-8Wk"/>
+                <outlet property="cellViewMinLabel" destination="xFH-eH-Kt3" id="RrT-PP-cng"/>
+                <outlet property="clockImage" destination="9WT-GD-BbL" id="kxM-v6-3aL"/>
                 <outlet property="dayLabel" destination="8po-JK-dMy" id="Zij-k3-dFr"/>
             </connections>
             <point key="canvasLocation" x="-49" y="-230"/>
         </view>
     </objects>
+    <resources>
+        <image name="clock" width="64" height="64"/>
+    </resources>
 </document>
