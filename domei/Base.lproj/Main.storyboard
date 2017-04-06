@@ -1251,10 +1251,19 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-e7-tcm">
+                                        <rect key="frame" x="308" y="20" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="tapped:" destination="0lN-Ax-rPM" eventType="touchUpInside" id="JgD-Js-yfX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ycP-e7-tcm" secondAttribute="trailing" constant="20" id="BiW-aU-5XC"/>
                                     <constraint firstItem="0oM-yv-WWf" firstAttribute="top" secondItem="r9x-xg-YRZ" secondAttribute="bottom" constant="10" id="Z3y-3p-aeO"/>
+                                    <constraint firstItem="ycP-e7-tcm" firstAttribute="top" secondItem="Kty-A8-6wq" secondAttribute="top" constant="20" id="cou-84-Kyz"/>
                                     <constraint firstItem="r9x-xg-YRZ" firstAttribute="centerY" secondItem="Kty-A8-6wq" secondAttribute="centerY" id="eWI-1c-icR"/>
                                     <constraint firstItem="r9x-xg-YRZ" firstAttribute="centerX" secondItem="Kty-A8-6wq" secondAttribute="centerX" id="rCx-DB-7sg"/>
                                     <constraint firstItem="0oM-yv-WWf" firstAttribute="centerX" secondItem="Kty-A8-6wq" secondAttribute="centerX" id="zkZ-ip-UV2"/>

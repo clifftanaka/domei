@@ -11,6 +11,5 @@ import Foundation
 class User {
     var id : String = ""
     var name : String = ""
-    var onlineStatus : String = ""
-    var friends : [String] = []
+    var status : String = ""
 }

@@ -168,6 +168,6 @@ class TimerViewController: UIViewController {
     func updateStatus(status: String) {
         let user = FIRAuth.auth()!.currentUser!
         
-        FIRDatabase.database().reference().child("users").child(user.uid).child("user").child("onlineStatus").setValue(status)
+        FIRDatabase.database().reference().child("users").child(user.uid).child("user").child("status").setValue(status)
     }
 }

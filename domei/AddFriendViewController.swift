@@ -45,7 +45,7 @@ class AddFriendViewController: UIViewController, UITableViewDelegate, UITableVie
                 let user = User()
                 user.id = snapshot.key
                 user.name = fbUser["name"] as! String
-                user.onlineStatus = fbUser["onlineStatus"] as! String
+                user.status = fbUser["status"] as! String
                 self.everyone.append(user)
             }
         })
