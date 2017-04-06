@@ -120,12 +120,15 @@ class TimerViewController: UIViewController {
         if status == Constants.statusReset {
             start()
             status = Constants.statusStarted
+            updateStatus(status: "chanting")
         } else if status == Constants.statusStarted {
             pause()
             status = Constants.statusStopped
+            updateStatus(status: "online")
         } else if status == Constants.statusStopped {
             start()
             status = Constants.statusStarted
+            updateStatus(status: "chanting")
         }
         updateButtons()
     }
@@ -162,4 +165,9 @@ class TimerViewController: UIViewController {
         
     }
     
+    func updateStatus(status: String) {
+        let user = FIRAuth.auth()!.currentUser!
+        
+        FIRDatabase.database().reference().child("users").child(user.uid).child("user").child("onlineStatus").setValue(status)
+    }
 }

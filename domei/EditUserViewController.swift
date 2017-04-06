@@ -25,10 +25,8 @@ class EditUserViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: Any) {
         let authUser = FIRAuth.auth()!.currentUser!
-        let user = [
-            "name" : nameField.text
-        ]
-        FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").setValue(user)
+    
+        FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").child("name").setValue(nameField.text)
         dismiss(animated: true, completion: nil)
     }
     

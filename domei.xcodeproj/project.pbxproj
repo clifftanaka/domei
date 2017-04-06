@@ -45,6 +45,8 @@
 		91DA98AA1E8D028A00801C59 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA98A91E8D028A00801C59 /* CellView.xib */; };
 		91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AB1E8D02E200801C59 /* CellView.swift */; };
 		91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AD1E8D05E700801C59 /* LogViewController.swift */; };
+		91F769C11E968250006D5463 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F769C01E968250006D5463 /* HomeViewController.swift */; };
+		91F769C31E96835A006D5463 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F769C21E96835A006D5463 /* MainCell.swift */; };
 		EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CC45576B6A908A8719B2A1 /* Pods_domei.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		91DA98A91E8D028A00801C59 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		91DA98AB1E8D02E200801C59 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		91DA98AD1E8D05E700801C59 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		91F769C01E968250006D5463 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		91F769C21E96835A006D5463 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		D8A9C3760DBA3043E4DB46F4 /* Pods-domei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-domei/Pods-domei.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,7 @@
 				91AB8A731E95551500C09235 /* UserViewController.swift */,
 				91AB8A751E95553F00C09235 /* ViewFriendsViewController.swift */,
 				9195A5DF1E95F228002F3EB2 /* EditUserViewController.swift */,
+				91F769C01E968250006D5463 /* HomeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				915D1C401E924ED800B790F7 /* CustomCell.swift */,
 				9195A5E31E966014002F3EB2 /* AddFriendViewCell.swift */,
 				91947B331E8CC9380083F268 /* TimerButton.swift */,
+				91F769C21E96835A006D5463 /* MainCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
 				914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */,
 				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
+				91F769C11E968250006D5463 /* HomeViewController.swift in Sources */,
 				9195A5E01E95F228002F3EB2 /* EditUserViewController.swift in Sources */,
 				9117005B1E94E74D0069CFF1 /* NewLogViewController.swift in Sources */,
 				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
@@ -389,6 +396,7 @@
 				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
 				91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */,
+				91F769C31E96835A006D5463 /* MainCell.swift in Sources */,
 				914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */,
 				91AB8A741E95551500C09235 /* UserViewController.swift in Sources */,
 				914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */,

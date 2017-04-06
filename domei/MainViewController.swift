@@ -32,7 +32,7 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
         authUI?.providers = self.getListOfIDPs()
         
         //I use this method for signing out when I'm developing
-        //try! authUI?.signOut()
+        try! authUI?.signOut()
     }
     
     override func viewDidAppear(_ animated: Bool) {
