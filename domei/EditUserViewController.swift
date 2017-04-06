@@ -19,7 +19,6 @@ class EditUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("edit: \(user.name)")
         self.nameField.text = user.name
     }
     

@@ -57,7 +57,6 @@ class LogViewController: UIViewController {
         
         var incrementDate = startDate
         while incrementDate.compare(endDate) != ComparisonResult.orderedSame {
-            print(incrementDate)
             let key = dateFormatter.string(from: incrementDate)
             calendarHeader.append(key)
             

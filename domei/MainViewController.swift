@@ -32,7 +32,7 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
         authUI?.providers = self.getListOfIDPs()
         
         //I use this method for signing out when I'm developing
-        //try! authUI?.signOut()
+        try! authUI?.signOut()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,11 +62,11 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
                 let authUserId = (user! as FIRUser).uid
                 let newUser : User = User()
                 newUser.name = (user?.email)!
-                newUser.status = "online"
                 
                 FIRDatabase.database().reference().child("users").child(authUserId).child("user").observe(FIRDataEventType.value, with: { (snapshot) in
                     if !snapshot.exists() {
-                        FIRDatabase.database().reference().child("users").child(authUserId).child("user").setValue(["name":newUser.name,"status":newUser.status])
+                        FIRDatabase.database().reference().child("users").child(authUserId).child("user").setValue(["name":newUser.name])
+                        FIRDatabase.database().reference().child("status").setValue([authUserId:"online"])
                     }
                 })
             }
