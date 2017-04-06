@@ -12,6 +12,7 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 import FirebaseTwitterAuthUI
+import FirebaseDatabase
 
 class MainViewController: UITabBarController, FUIAuthDelegate {
     
@@ -57,7 +58,20 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
         super.viewWillAppear(animated)
         
         self.authStateDidChangeHandle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            
+            if user != nil {
+                let authUserId = (user! as FIRUser).uid
+                let newUser : User = User()
+                newUser.name = (user?.email)!
+                newUser.onlineStatus = "online"
+                
+                FIRDatabase.database().reference().child("users").child(authUserId).child("user").observe(FIRDataEventType.value, with: { (snapshot) in
+                    if !snapshot.exists() {
+                        FIRDatabase.database().reference().child("users").child(authUserId).child("user").setValue(["name":newUser.name,"onlineStatus":newUser.onlineStatus])
+                    } else {
+                        print("user exists")
+                    }
+                })
+            }
         })
     }
     
@@ -68,8 +82,9 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
             FIRAuth.auth()?.removeStateDidChangeListener(handle)
         }
     }
-
+    
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        
         guard let user = user else {
             print(error)
             return
@@ -81,10 +96,9 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
     
     func getListOfIDPs() -> [FUIAuthProvider] {
         var providers = [FUIAuthProvider]()
-        providers.append(FUIGoogleAuth(scopes: [kGoogleGamesScope,kGooglePlusMeScope,kGoogleUserInfoEmailScope,
-                                                kGoogleUserInfoProfileScope]))
+        providers.append(FUIGoogleAuth(scopes: [kGoogleUserInfoEmailScope, kGoogleUserInfoProfileScope]))
         //providers.append(FUITwitterAuth())
-        providers.append(FUIFacebookAuth(permissions: ["email", "user_friends", "ads_read"]))
+        providers.append(FUIFacebookAuth(permissions: ["public_profile", "email", "user_friends"]))
         
         return providers
     }

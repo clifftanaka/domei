@@ -29,6 +29,8 @@
 		91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B2F1E8CACFC0083F268 /* TimerViewController.swift */; };
 		91947B321E8CC5CD0083F268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B311E8CC5CD0083F268 /* Constants.swift */; };
 		91947B341E8CC9380083F268 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B331E8CC9380083F268 /* TimerButton.swift */; };
+		9195A5E01E95F228002F3EB2 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195A5DF1E95F228002F3EB2 /* EditUserViewController.swift */; };
+		9195A5E41E966014002F3EB2 /* AddFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195A5E31E966014002F3EB2 /* AddFriendViewCell.swift */; };
 		91AB8A6E1E950C6800C09235 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A6D1E950C6800C09235 /* Util.swift */; };
 		91AB8A701E954A6D00C09235 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A6F1E954A6D00C09235 /* User.swift */; };
 		91AB8A721E9554EA00C09235 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A711E9554EA00C09235 /* AddFriendViewController.swift */; };
@@ -73,6 +75,8 @@
 		91947B2F1E8CACFC0083F268 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		91947B311E8CC5CD0083F268 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91947B331E8CC9380083F268 /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
+		9195A5DF1E95F228002F3EB2 /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		9195A5E31E966014002F3EB2 /* AddFriendViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewCell.swift; sourceTree = "<group>"; };
 		91AB8A6D1E950C6800C09235 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		91AB8A6F1E954A6D00C09235 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91AB8A711E9554EA00C09235 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +166,19 @@
 				91AB8A711E9554EA00C09235 /* AddFriendViewController.swift */,
 				91AB8A731E95551500C09235 /* UserViewController.swift */,
 				91AB8A751E95553F00C09235 /* ViewFriendsViewController.swift */,
+				9195A5DF1E95F228002F3EB2 /* EditUserViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9195A5E51E96601D002F3EB2 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				915D1C401E924ED800B790F7 /* CustomCell.swift */,
+				9195A5E31E966014002F3EB2 /* AddFriendViewCell.swift */,
+				91947B331E8CC9380083F268 /* TimerButton.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		91AFC4711E8AA9730022D220 = {
@@ -187,22 +202,21 @@
 		91AFC47C1E8AA9730022D220 /* domei */ = {
 			isa = PBXGroup;
 			children = (
+				9195A5E51E96601D002F3EB2 /* CustomCells */,
 				914CB2F91E8F875700600FE3 /* Models */,
 				91DA98A81E8D026100801C59 /* CalendarView */,
 				91947B351E8CD3770083F268 /* ViewController */,
 				914A19521E8B69D50065BC76 /* Auth */,
 				914A194E1E8ABA260065BC76 /* domei.entitlements */,
-				91AFC47D1E8AA9730022D220 /* AppDelegate.swift */,
-				91947B331E8CC9380083F268 /* TimerButton.swift */,
 				91947B311E8CC5CD0083F268 /* Constants.swift */,
+				91AB8A6D1E950C6800C09235 /* Util.swift */,
+				91AFC47D1E8AA9730022D220 /* AppDelegate.swift */,
 				91AFC4811E8AA9730022D220 /* Main.storyboard */,
-				91AFC4871E8AA9740022D220 /* Assets.xcassets */,
 				91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */,
+				91AFC4871E8AA9740022D220 /* Assets.xcassets */,
 				91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */,
 				914A19731E8B8A5D0065BC76 /* Info.plist */,
 				914A19711E8B88C20065BC76 /* GoogleService-Info.plist */,
-				915D1C401E924ED800B790F7 /* CustomCell.swift */,
-				91AB8A6D1E950C6800C09235 /* Util.swift */,
 			);
 			path = domei;
 			sourceTree = "<group>";
@@ -360,6 +374,7 @@
 				91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */,
 				914A19691E8B69D60065BC76 /* FUICustomPasswordSignInViewController.swift in Sources */,
 				91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */,
+				9195A5E41E966014002F3EB2 /* AddFriendViewCell.swift in Sources */,
 				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
 				91AB8A6E1E950C6800C09235 /* Util.swift in Sources */,
 				91AB8A721E9554EA00C09235 /* AddFriendViewController.swift in Sources */,
@@ -367,6 +382,7 @@
 				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
 				914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */,
 				914A19621E8B69D60065BC76 /* FUICustomAuthPickerViewController.swift in Sources */,
+				9195A5E01E95F228002F3EB2 /* EditUserViewController.swift in Sources */,
 				9117005B1E94E74D0069CFF1 /* NewLogViewController.swift in Sources */,
 				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,

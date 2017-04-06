@@ -7,29 +7,42 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class ViewFriendsViewController: UIViewController {
+class ViewFriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var friends : [NSDictionary] = []
+    var users : [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if friends.count == 0 {
+            return 1
+        } else {
+            return friends.count
+        }
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        if friends.count == 0 {
+            cell.textLabel?.text = "no friends 😢"
+        } else {
+            cell.textLabel?.text = (friends[indexPath.row] as NSDictionary).value(forKey: "name") as! String?
+        }
+        return cell
+    }
+    
+    @IBAction func doneTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

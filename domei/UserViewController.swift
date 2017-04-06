@@ -12,52 +12,56 @@ import FirebaseDatabase
 
 class UserViewController: UIViewController {
     
-    @IBOutlet weak var usernameField: UITextField!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numFriendsButton: UIButton!
     
+    var user : User = User()
+    var myFriends : [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let authUser = FIRAuth.auth()!.currentUser!
-        
-        FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").child("name").observe(FIRDataEventType.value, with: { (snapshot) in
+        FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").observe(FIRDataEventType.value, with: { (snapshot) in
+            let dic = snapshot.value as! NSDictionary
+            self.user.name = (dic["name"] as? String)!
+            self.nameLabel.text = self.user.name
+        })
+        FIRDatabase.database().reference().child("users").child(authUser.uid).child("friends").observe(FIRDataEventType.childAdded, with: { (snapshot) in
             
-            guard !snapshot.exists() else{
-                self.usernameField.text = snapshot.value as! String
-                return
+            if snapshot.exists() {
+                let key = snapshot.key 
+                let value = snapshot.value as! String
+                self.myFriends.append(["uid": key, "name": value])
+                self.numFriendsButton.setTitle("\(self.myFriends.count) friends", for: UIControlState.normal)
             }
         })
     }
     
-    @IBAction func saveTapped(_ sender: Any) {
-        let authUser = FIRAuth.auth()!.currentUser!
-        let text = usernameField.text!
-        if text != "" {
-            let user = [
-                "name" : text
-            ]
-            FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").setValue(user)
-        } else {
-            showAlert(title: "Oops", message: "You cannot entery an empty string")
-        }
+    
+    @IBAction func editTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editusersegue", sender: self.user)
     }
     
     @IBAction func viewFriendsTapped(_ sender: Any) {
-        performSegue(withIdentifier: "viewfriendssegue", sender: nil)
+        performSegue(withIdentifier: "viewfriendssegue", sender: self.myFriends)
     }
     
     @IBAction func addFriendTapped(_ sender: Any) {
-        performSegue(withIdentifier: "addfriendsegue", sender: nil)
+        performSegue(withIdentifier: "addfriendsegue", sender: self.myFriends)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addfriendsegue" {
-            //let nextVC = segue.destination as! NewLogViewController
-            //nextVC.allData = sender as! [[TimerLog]]
-            //nextVC.startDate = startDate
+        if segue.identifier == "editusersegue" {
+            let nextVC = segue.destination as! EditUserViewController
+            nextVC.user = sender as! User
         } else if segue.identifier == "viewfriendssegue" {
-            
+            let nextVC = segue.destination as! ViewFriendsViewController
+            nextVC.friends = sender as! [NSDictionary]
+        } else if segue.identifier == "addfriendsegue" {
+            let nextVC = segue.destination as! AddFriendViewController
+            nextVC.friends = sender as! [NSDictionary]
         }
     }
     
