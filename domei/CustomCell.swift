@@ -56,8 +56,6 @@ class CustomCell: UITableViewCell {
     func showMedal(ts: String, index: UInt8, type: UInt8) {
         // show medal
         getMedal(index: index).isHidden = false
-        print(ts)
-        print("false index: \(index), type: \(type)")
         // 1/4 medal
         if type == 1 {
             getMedal(index: index).image = UIImage(named: "gold-medal-1")

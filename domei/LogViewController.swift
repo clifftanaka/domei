@@ -52,10 +52,12 @@ class LogViewController: UIViewController {
         tableView.delegate = self
         
         // 365 days since startDate
-        startDate = dateFormatter.date(from: "2017/01/01")!
+        startDate = Util.getStartDate()
+        let endDate = Util.getEndDate()
+        
         var incrementDate = startDate
-        let endDate = dateFormatter.date(from: "2017/12/31")
-        while incrementDate.compare(endDate!) != ComparisonResult.orderedSame {
+        while incrementDate.compare(endDate) != ComparisonResult.orderedSame {
+            print(incrementDate)
             let key = dateFormatter.string(from: incrementDate)
             calendarHeader.append(key)
             
@@ -74,16 +76,14 @@ class LogViewController: UIViewController {
             log.interval = Double(val["interval"] as! String)!
             log.key = snapshot.key
             
-            self.dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-            let date = self.dateFormatter.date(from: log.timeStamp)
-            self.dateFormatter.dateFormat = "YYYY/MM/dd"
-            
-            let numOfDays = self.calculateDaysBetweenTwoDates(start: self.startDate, end: date!)
+            let date = Util.getDateFromString(string: log.timeStamp)
+            let numOfDays = Util.calculateDaysBetweenTwoDates(start: self.startDate, end: date)
             self.allData[numOfDays].append(log)
-            self.calendarView.reloadData()
-            self.tableView.reloadData()
+            
+            self.loadList()
         })
-        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -106,15 +106,16 @@ class LogViewController: UIViewController {
         jumpToDate(date: Date())
     }
     
-    func calculateDaysBetweenTwoDates(start: Date, end: Date) -> Int {
-        
-        guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
-            return 0
+    @IBAction func newLogTapped(_ sender: Any) {
+        performSegue(withIdentifier: "newLogSegue", sender: allData)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newLogSegue" {
+            let nextVC = segue.destination as! NewLogViewController
+            nextVC.allData = sender as! [[TimerLog]]
+            nextVC.startDate = startDate
         }
-        guard let end = currentCalendar.ordinality(of: .day, in: .era, for: end) else {
-            return 0
-        }
-        return end - start
     }
     
     func updateMonthYear(date: Date) {
@@ -125,6 +126,10 @@ class LogViewController: UIViewController {
         monthLabel.text = months?[month-1]
     }
     
+    func loadList() {
+        self.calendarView.reloadData()
+        self.tableView.reloadData()
+    }
 }
 
 extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
@@ -186,18 +191,25 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
         return calendarHeader.count
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //jumpToDate(date: <#T##Date#>)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let dateString = calendarHeader[section]
+        let date = dateFormatter.date(from: dateString)
+        
+        calendarView.deselectAllDates()
+        calendarView.selectDates([date!])
+        
+        jumpToDate(date: date!)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
 extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     public func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        
-        let startDate = formatter.date(from: "2017 01 01")! // You can use date generated from a formatter
-        let endDate = Date(timeIntervalSinceNow: 60*60*24*365) // You can also use dates created from this function
+        let startDate = Util.getStartDate()
+        let endDate = Util.getEndDate()
+
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
@@ -210,13 +222,11 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
     }
     
     public func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
         let myCustomCell = cell as! CellView
         
         // Setup Cell text
         myCustomCell.dayLabel.text = cellState.text
-        let dateNum = calculateDaysBetweenTwoDates(start: startDate, end: date)
+        let dateNum = Util.calculateDaysBetweenTwoDates(start: startDate, end: date)
         if allData[dateNum].count > 0 {
             myCustomCell.showTime()
             var interval = 0.0
@@ -267,9 +277,6 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
     
     // Function to handle the text color of the calendar
     func handleCellTextColor(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        
         guard let myCustomCell = view as? CellView  else {
             return
         }
@@ -290,8 +297,8 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
             myCustomCell.clockImage.image?.alpha(0.5)
         }
         
-        let currentDateString = formatter.string(from: Date())
-        let cellStateDateString = formatter.string(from: cellState.date)
+        let currentDateString = Util.getStringKeyFromDate(date: Date())
+        let cellStateDateString = Util.getStringKeyFromDate(date: cellState.date)
         if  currentDateString ==  cellStateDateString {
             myCustomCell.dayLabel.textColor = Constants.timerBlue
         }
@@ -312,7 +319,7 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
     
     // scroll to appropriate section
     func jumpToSection(date: Date) {
-        let numOfDates = calculateDaysBetweenTwoDates(start: startDate, end: date)
+        let numOfDates = Util.calculateDaysBetweenTwoDates(start: startDate, end: date)
         var row = 0
         //some sections contain 0 rows
         if allData[numOfDates].count == 0 {
@@ -324,8 +331,6 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
     
     // logic that comes along with tapping to a particular date
     func jumpToDate(date: Date) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
         let date = currentCalendar.startOfDay(for: date)
         // caledar scrolling
         calendarView.scrollToDate(date, triggerScrollToDateDelegate: false, animateScroll: true, preferredScrollPosition: UICollectionViewScrollPosition.top) {
@@ -333,6 +338,8 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
         }
         updateMonthYear(date: date)
     }
+    
+    
 }
 
 extension UIImage{
