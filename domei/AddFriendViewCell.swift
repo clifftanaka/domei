@@ -29,8 +29,8 @@ class AddFriendViewCell: UITableViewCell {
     @IBAction func addTapped(_ sender: Any) {
         
         let user = FIRAuth.auth()!.currentUser!
-        
         FIRDatabase.database().reference().child("users").child(user.uid).child("friends").child(uid).setValue(name)
+        updateButton(isFriend: true)
     }
     
     func updateButton(isFriend: Bool) {
