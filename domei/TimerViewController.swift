@@ -34,7 +34,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
-        dateFormatter.dateFormat = "YYYY-MM-dd HH:MM:ss"
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         
         updatePaused(false)
         updateButtons()
@@ -70,7 +70,7 @@ class TimerViewController: UIViewController {
     func reset() {
         updatePaused(false)
         timer.invalidate()
-        timer == nil
+        timer = Timer()
         hourLabel.text = "00"
         minLabel.text = "00"
         secLabel.text = "00"

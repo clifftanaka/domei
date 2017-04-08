@@ -23,7 +23,6 @@
 		914A196D1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A195F1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.swift */; };
 		914A196E1E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914A19601E8B69D60065BC76 /* FUICustomPasswordVerificationViewController.xib */; };
 		914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19711E8B88C20065BC76 /* GoogleService-Info.plist */; };
-		914A19741E8B8A5D0065BC76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914A19731E8B8A5D0065BC76 /* Info.plist */; };
 		914CB2FB1E8F876300600FE3 /* TimerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CB2FA1E8F876300600FE3 /* TimerLog.swift */; };
 		915D1C411E924ED800B790F7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D1C401E924ED800B790F7 /* CustomCell.swift */; };
 		91947B301E8CACFC0083F268 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91947B2F1E8CACFC0083F268 /* TimerViewController.swift */; };
@@ -274,7 +273,7 @@
 				TargetAttributes = {
 					91AFC4791E8AA9730022D220 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FYWFFZU43Q;
+						DevelopmentTeam = JEQYEJ6K3Z;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -316,7 +315,6 @@
 				914A19681E8B69D60065BC76 /* FUICustomPasswordRecoveryViewController.xib in Resources */,
 				91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */,
 				914A19721E8B88C20065BC76 /* GoogleService-Info.plist in Resources */,
-				914A19741E8B8A5D0065BC76 /* Info.plist in Resources */,
 				914A196C1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.xib in Resources */,
 				91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */,
 			);
@@ -530,14 +528,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = FYWFFZU43Q;
+				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -549,14 +547,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = FYWFFZU43Q;
+				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

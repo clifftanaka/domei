@@ -83,8 +83,8 @@ class MainViewController: UITabBarController, FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         
-        guard let user = user else {
-            print(error)
+        guard user != nil else {
+            print(error!)
             return
         }
     }

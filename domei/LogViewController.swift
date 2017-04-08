@@ -202,13 +202,27 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print(allData[indexPath.section].count)
+        print(allData[indexPath.section][indexPath.row].key)
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("timerLogs").child(allData[indexPath.section][indexPath.row].key).removeValue()
+            allData[indexPath.section].remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 }
 
 extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     public func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let startDate = Util.getStartDate()
         let endDate = Util.getEndDate()
-
+        
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
@@ -286,14 +300,14 @@ extension LogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
             myCustomCell.cellViewMinLabel.textColor = Constants.timerOrange
             myCustomCell.cellViewColonLabel.textColor = Constants.timerOrange
             myCustomCell.layer.backgroundColor = UIColor.white.cgColor
-            myCustomCell.clockImage.image?.alpha(1.0)
+            _ = myCustomCell.clockImage.image?.alpha(1.0)
         } else {
             myCustomCell.dayLabel.textColor = Constants.timerGrey
             myCustomCell.cellViewHourLabel.textColor = Constants.timerOrange.withAlphaComponent(0.5)
             myCustomCell.cellViewMinLabel.textColor = Constants.timerOrange.withAlphaComponent(0.5)
             myCustomCell.cellViewColonLabel.textColor = Constants.timerOrange.withAlphaComponent(0.5)
             myCustomCell.layer.backgroundColor = Constants.timerLightGrey.cgColor
-            myCustomCell.clockImage.image?.alpha(0.5)
+            _ = myCustomCell.clockImage.image?.alpha(0.5)
         }
         
         let currentDateString = Util.getStringKeyFromDate(date: Date())
