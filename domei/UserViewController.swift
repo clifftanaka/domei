@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseAuthUI
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, FUIAuthDelegate {
     
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,6 +19,8 @@ class UserViewController: UIViewController {
     
     var user : User = User()
     var myFriends : [NSDictionary] = []
+    var authUI: FUIAuth?
+    var customAuthUIDelegate: FUIAuthDelegate = FUICustomAuthDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,17 @@ class UserViewController: UIViewController {
         performSegue(withIdentifier: "addfriendsegue", sender: self.myFriends)
     }
     
+    @IBAction func logoutAction(_ sender: Any) {
+        authUI = FUIAuth.defaultAuthUI()
+        authUI?.delegate = self.customAuthUIDelegate
+        try! authUI?.signOut()
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editusersegue" {
             let nextVC = segue.destination as! EditUserViewController
@@ -70,5 +84,17 @@ class UserViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertVC.addAction(okAction)
         self.present(alertVC, animated: true)
+    }
+    
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        
+        guard user != nil else {
+            print(error!)
+            return
+        }
+    }
+    
+    func updateUI(auth: FIRAuth, user: FIRUser?) {
     }
 }

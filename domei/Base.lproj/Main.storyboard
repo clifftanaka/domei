@@ -26,7 +26,7 @@
                                 <rect key="frame" x="20" y="308" width="374" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIQ-BV-IyO">
-                                        <rect key="frame" x="142.66666666666666" y="0.0" width="89" height="80"/>
+                                        <rect key="frame" x="143" y="0.0" width="89" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="yn3-S0-1MF"/>
                                         </constraints>
@@ -87,10 +87,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJm-5r-7ln">
-                                <rect key="frame" x="20" y="428" width="374" height="120"/>
+                                <rect key="frame" x="20" y="428" width="374" height="259"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-UL-Bvv">
-                                        <rect key="frame" x="137" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="137" y="80" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="fcn-xW-S9Z"/>
                                             <constraint firstAttribute="width" constant="100" id="kst-4Y-aaC"/>
@@ -102,7 +102,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k2-99-ZMB">
-                                        <rect key="frame" x="57" y="25" width="70" height="70"/>
+                                        <rect key="frame" x="57" y="95" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="oCu-x1-Mgk"/>
                                             <constraint firstAttribute="height" constant="70" id="phs-tH-iPd"/>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiL-4T-WMj">
-                                        <rect key="frame" x="247" y="25" width="70" height="70"/>
+                                        <rect key="frame" x="247" y="95" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="hHa-w9-a4j"/>
                                             <constraint firstAttribute="height" constant="70" id="jK8-zD-FAi"/>
@@ -126,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf0-Sk-jQH">
-                                        <rect key="frame" x="156" y="120" width="63" height="21"/>
+                                        <rect key="frame" x="156" y="190" width="63" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="63" id="0bc-8g-xhW"/>
                                         </constraints>
@@ -139,7 +139,6 @@
                                 <constraints>
                                     <constraint firstItem="CcB-UL-Bvv" firstAttribute="leading" secondItem="3k2-99-ZMB" secondAttribute="trailing" constant="10" id="Emd-40-2HT"/>
                                     <constraint firstItem="PiL-4T-WMj" firstAttribute="centerY" secondItem="jJm-5r-7ln" secondAttribute="centerY" id="HoI-LF-jzo"/>
-                                    <constraint firstAttribute="height" constant="120" id="KPk-7L-JZp"/>
                                     <constraint firstItem="PiL-4T-WMj" firstAttribute="leading" secondItem="CcB-UL-Bvv" secondAttribute="trailing" constant="10" id="MqT-LJ-feD"/>
                                     <constraint firstItem="3k2-99-ZMB" firstAttribute="centerY" secondItem="jJm-5r-7ln" secondAttribute="centerY" id="NE0-DC-8Fp"/>
                                     <constraint firstItem="rf0-Sk-jQH" firstAttribute="centerX" secondItem="jJm-5r-7ln" secondAttribute="centerX" id="UfP-nj-TA8"/>
@@ -176,11 +175,12 @@
                             <constraint firstItem="jJm-5r-7ln" firstAttribute="top" secondItem="meH-XH-qJ9" secondAttribute="bottom" id="TjK-EY-dfO"/>
                             <constraint firstItem="meH-XH-qJ9" firstAttribute="leading" secondItem="DK4-zx-hBa" secondAttribute="leadingMargin" id="WTP-Oj-8XK"/>
                             <constraint firstItem="UX7-qP-Ljc" firstAttribute="top" secondItem="d6K-Qk-r3S" secondAttribute="bottom" constant="-20" id="XZG-7d-kZG"/>
+                            <constraint firstItem="RPn-1W-WnN" firstAttribute="top" secondItem="jJm-5r-7ln" secondAttribute="bottom" id="ezW-ve-9Xy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="meH-XH-qJ9" secondAttribute="trailing" id="ujA-Os-6fi"/>
                             <constraint firstItem="UX7-qP-Ljc" firstAttribute="leading" secondItem="DK4-zx-hBa" secondAttribute="leading" id="vNk-bI-d31"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" id="CWe-L0-EMS"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatchicon" id="CWe-L0-EMS"/>
                     <connections>
                         <outlet property="hourLabel" destination="YHj-nI-eEa" id="anl-gz-E9B"/>
                         <outlet property="logButton" destination="PiL-4T-WMj" id="bMJ-Zd-GFd"/>
@@ -221,7 +221,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-bl-J1y">
-                                        <rect key="frame" x="188.66666666666663" y="22" width="37.333333333333343" height="20"/>
+                                        <rect key="frame" x="188.33333333333334" y="22" width="37.333333333333314" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="pm8-v0-qed"/>
                                         </constraints>
@@ -710,7 +710,7 @@
                             <constraint firstItem="hxd-MU-YSN" firstAttribute="top" secondItem="wLl-cK-NWZ" secondAttribute="top" id="zJb-R6-1nF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" id="ZAp-o9-Cnz"/>
+                    <tabBarItem key="tabBarItem" title="Log" image="logicon" id="ZAp-o9-Cnz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="jtz-Ca-3sh" id="sVK-cu-LjE"/>
@@ -788,6 +788,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRL-oo-AND">
+                                <rect key="frame" x="52" y="214" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logout"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="H6z-xQ-TpS" eventType="touchUpInside" id="TSD-sm-cGw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -804,7 +812,7 @@
                             <constraint firstItem="VPc-9U-9Z4" firstAttribute="centerY" secondItem="f2G-kK-Mbc" secondAttribute="centerY" id="wQd-Xu-2e1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" id="H44-DT-X5X"/>
+                    <tabBarItem key="tabBarItem" title="User" image="usericon" id="H44-DT-X5X"/>
                     <connections>
                         <outlet property="nameLabel" destination="VPc-9U-9Z4" id="MFM-gq-wAo"/>
                         <outlet property="numFriendsButton" destination="neZ-Hl-k4E" id="6Pt-cC-Eza"/>
@@ -1175,13 +1183,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="291"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-1Y-G6Z">
-                                                <rect key="frame" x="264" y="132.66666666666666" width="36" height="27"/>
+                                                <rect key="frame" x="264" y="132" width="36" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6q1-64-If4">
-                                                <rect key="frame" x="105" y="132.66666666666666" width="56" height="27"/>
+                                                <rect key="frame" x="105" y="132" width="56" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1331,10 +1339,10 @@
                                 <rect key="frame" x="20" y="80" width="374" height="273"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcB-cF-tcu">
-                                        <rect key="frame" x="0.0" y="51.666666666666671" width="374" height="170"/>
+                                        <rect key="frame" x="0.0" y="52" width="374" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9x-xg-YRZ">
-                                                <rect key="frame" x="153.66666666666666" y="0.0" width="67" height="120"/>
+                                                <rect key="frame" x="154" y="0.0" width="67" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="7cT-Lz-3cM"/>
                                                 </constraints>
@@ -1343,7 +1351,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="people chanting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oM-yv-WWf">
-                                                <rect key="frame" x="104" y="140.00000000000003" width="166" height="29"/>
+                                                <rect key="frame" x="104" y="140" width="166" height="29"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1384,7 +1392,7 @@
                             <constraint firstItem="Kty-A8-6wq" firstAttribute="leading" secondItem="5Ki-qo-2JU" secondAttribute="leadingMargin" id="rgo-UB-IYX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="9pm-sc-k85"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeicon" id="9pm-sc-k85"/>
                     <connections>
                         <outlet property="allPeople" destination="r9x-xg-YRZ" id="Knn-dO-TcZ"/>
                         <outlet property="tableView" destination="g1F-dQ-bvx" id="PLL-3m-IKl"/>
@@ -1397,7 +1405,7 @@
         <!--Main View Controller-->
         <scene sceneID="laW-DB-Na4">
             <objects>
-                <tabBarController id="1WT-vw-UCF" customClass="MainViewController" customModule="domei" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" id="1WT-vw-UCF" customClass="MainViewController" customModule="domei" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zxy-Lb-O6H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1420,5 +1428,9 @@
         <image name="domei_logo_all_white" width="470" height="138"/>
         <image name="edit" width="85" height="85"/>
         <image name="gold-medal" width="85" height="85"/>
+        <image name="homeicon" width="30" height="30"/>
+        <image name="logicon" width="30" height="30"/>
+        <image name="stopwatchicon" width="30" height="30"/>
+        <image name="usericon" width="30" height="30"/>
     </resources>
 </document>

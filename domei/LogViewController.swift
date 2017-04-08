@@ -213,7 +213,8 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == UITableViewCellEditingStyle.delete {
             FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("timerLogs").child(allData[indexPath.section][indexPath.row].key).removeValue()
             allData[indexPath.section].remove(at: indexPath.row)
-            tableView.reloadData()
+            
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }
 }
