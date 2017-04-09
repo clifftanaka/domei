@@ -90,8 +90,8 @@ class TimerViewController: UIViewController {
         var elapsedTime = totalTime
         
         // calculate the hours in elapsed time
-        let hours = UInt8(elapsedTime / 360.0)
-        elapsedTime -= (TimeInterval(hours) * 360)
+        let hours = UInt8(elapsedTime / 3600.0)
+        elapsedTime -= (TimeInterval(hours) * 3600)
         
         // calculate the minutes in elapsed time
         let minutes = UInt8(elapsedTime / 60.0)

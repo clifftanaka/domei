@@ -273,7 +273,7 @@
 				TargetAttributes = {
 					91AFC4791E8AA9730022D220 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JEQYEJ6K3Z;
+						DevelopmentTeam = FYWFFZU43Q;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -528,14 +528,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
+				DEVELOPMENT_TEAM = FYWFFZU43Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -547,14 +547,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
+				DEVELOPMENT_TEAM = FYWFFZU43Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
