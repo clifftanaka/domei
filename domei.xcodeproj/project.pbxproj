@@ -35,6 +35,7 @@
 		91AB8A721E9554EA00C09235 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A711E9554EA00C09235 /* AddFriendViewController.swift */; };
 		91AB8A741E95551500C09235 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A731E95551500C09235 /* UserViewController.swift */; };
 		91AB8A761E95553F00C09235 /* ViewFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB8A751E95553F00C09235 /* ViewFriendsViewController.swift */; };
+		91AC72731E9BEE66005D9107 /* MyTimerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC72721E9BEE66005D9107 /* MyTimerLog.swift */; };
 		91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC47D1E8AA9730022D220 /* AppDelegate.swift */; };
 		91AFC4831E8AA9730022D220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4811E8AA9730022D220 /* Main.storyboard */; };
 		91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */; };
@@ -84,6 +85,7 @@
 		91AB8A711E9554EA00C09235 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		91AB8A731E95551500C09235 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		91AB8A751E95553F00C09235 /* ViewFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFriendsViewController.swift; sourceTree = "<group>"; };
+		91AC72721E9BEE66005D9107 /* MyTimerLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTimerLog.swift; sourceTree = "<group>"; };
 		91AFC47A1E8AA9730022D220 /* domei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFC47D1E8AA9730022D220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AFC4821E8AA9730022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				91AFC4841E8AA9730022D220 /* domei.xcdatamodeld */,
 				914A19731E8B8A5D0065BC76 /* Info.plist */,
 				914A19711E8B88C20065BC76 /* GoogleService-Info.plist */,
+				91AC72721E9BEE66005D9107 /* MyTimerLog.swift */,
 			);
 			path = domei;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				9195A5E01E95F228002F3EB2 /* EditUserViewController.swift in Sources */,
 				9117005B1E94E74D0069CFF1 /* NewLogViewController.swift in Sources */,
 				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
+				91AC72731E9BEE66005D9107 /* MyTimerLog.swift in Sources */,
 				91F769C71E96BACA006D5463 /* Status.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,
 				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,

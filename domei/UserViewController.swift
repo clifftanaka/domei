@@ -95,6 +95,24 @@ class UserViewController: UIViewController, FUIAuthDelegate {
         }
     }
     
+    @IBAction func resetCoreData(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do
+        {
+            var results = try context.fetch(TimerLogEntity.fetchRequest())
+            for managedObject in results
+            {
+                let managedObjectData:TimerLogEntity = managedObject as! TimerLogEntity
+                context.delete(managedObjectData)
+            }
+            results = try context.fetch(TimerLogEntity.fetchRequest())
+            MyTimerLog.reset()
+            print(results)
+        } catch {
+            
+        }
+    }
+    
     func updateUI(auth: FIRAuth, user: FIRUser?) {
     }
 }

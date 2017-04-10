@@ -24,11 +24,11 @@ class TimerViewController: UIViewController {
     var status : Int = Constants.statusReset
     var timer = Timer()
     var totalTime = TimeInterval()
-    var startTime = TimeInterval()
-    var pausedTime = TimeInterval()
-    var pausedInterval = 0.0
-    var isPaused : Bool = false
     let dateFormatter = DateFormatter()
+    
+    var timerLog : TimerLog = TimerLog()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +36,28 @@ class TimerViewController: UIViewController {
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         
-        updatePaused(false)
-        updateButtons()
+        if MyTimerLog.log.startTime > 0.0 {
+            print(MyTimerLog.log.startTime)
+            print(MyTimerLog.log.pausedInterval)
+            print(MyTimerLog.log.pausedTime)
+            print(MyTimerLog.log.isPaused)
+            
+            if MyTimerLog.log.isPaused {
+                updatePaused(true)
+                status = Constants.statusStopped
+                updateTime(true)
+            } else {
+                updatePaused(true)
+                MyTimerLog.log.pausedTime = NSDate.timeIntervalSinceReferenceDate
+                status = Constants.statusStarted
+                start()
+            }
+            updateButtons()
+        } else {
+            updatePaused(false)
+            updateButtons()
+        }
+        
     }
     
     func updateButtons() {
@@ -49,11 +69,11 @@ class TimerViewController: UIViewController {
     func start() {
         if !timer.isValid {
             let actionSelector : Selector = #selector(TimerViewController.updateTime)
-            if !isPaused {
-                startTime = NSDate.timeIntervalSinceReferenceDate
-                pausedInterval = 0.0
+            if !MyTimerLog.log.isPaused {
+                MyTimerLog.log.startTime = NSDate.timeIntervalSinceReferenceDate
+                MyTimerLog.log.pausedInterval = 0.0
             } else {
-                pausedInterval += (NSDate.timeIntervalSinceReferenceDate - pausedTime)
+                MyTimerLog.log.pausedInterval += (NSDate.timeIntervalSinceReferenceDate - MyTimerLog.log.pausedTime)
             }
             timer = Timer.scheduledTimer(timeInterval: 0.01, target:self, selector:actionSelector, userInfo: nil, repeats: true)
         }
@@ -61,7 +81,7 @@ class TimerViewController: UIViewController {
     }
     
     func pause() {
-        pausedTime = NSDate.timeIntervalSinceReferenceDate
+        MyTimerLog.log.pausedTime = NSDate.timeIntervalSinceReferenceDate
         updatePaused(true)
         timer.invalidate()
     }
@@ -75,18 +95,29 @@ class TimerViewController: UIViewController {
         minLabel.text = "00"
         secLabel.text = "00"
         msLabel.text = "00"
+        
+        resetTimerLog()
+    }
+    
+    func resetTimerLog() {
+        MyTimerLog.reset()
     }
     
     func updatePaused(_ isP: Bool) {
-        isPaused = isP
-        pausedLabel.isHidden = !isPaused
+        MyTimerLog.log.isPaused = isP
+        pausedLabel.isHidden = !MyTimerLog.log.isPaused
     }
     
-    func updateTime() {
+    func updateTime(_ isStored: Bool = false) {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         
         // Find the difference between current time and strart time
-        totalTime = currentTime - startTime - pausedInterval
+        var pausedInterval = MyTimerLog.log.pausedInterval
+        if isStored {
+            pausedInterval += NSDate.timeIntervalSinceReferenceDate - MyTimerLog.log.pausedTime
+        }
+        totalTime = currentTime - MyTimerLog.log.startTime - pausedInterval
+        
         var elapsedTime = totalTime
         
         // calculate the hours in elapsed time
@@ -102,7 +133,7 @@ class TimerViewController: UIViewController {
         elapsedTime -= TimeInterval(seconds)
         
         // find out the fraction of millisends to be displayed
-        let fraction = UInt8(elapsedTime * 100)
+        let fraction = UInt8(abs(elapsedTime) * 100)
         
         // add the leading zero for minutes, seconds and millseconds and store them as string constants
         let startHours    = hours > 9 ? String(hours):"0" + String(hours)

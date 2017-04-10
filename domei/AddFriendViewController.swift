@@ -73,10 +73,15 @@ class AddFriendViewController: UIViewController, UITableViewDelegate, UITableVie
                     continue
                 }
             }
-            cell.updateButton(isFriend: exists)
+            cell.isFriend = exists
+            cell.updateButton()
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
