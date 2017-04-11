@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             if remaining > 0.0  {
                 triggerTimerNotification(content: Constants.timerGoalReachedNotification(), interval: remaining)
             } else {
-                triggerTimerNotification(content: Constants.timerReminderNotification(), interval: 5)
+                triggerTimerNotification(content: Constants.timerReminderNotification(), interval: 10 * 60)
             }
         }
         let entity : TimerLogEntity = getTimerLogEntity()
