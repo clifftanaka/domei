@@ -10,9 +10,13 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseAuthUI
+import FirebaseDatabase
+import UserNotifications
+import UserNotificationsUI
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -20,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        
+        //Requesting Authorization for User Interactions
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
         return true
     }
     
@@ -29,6 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        if MyTimerLog.log.isPaused {
+            let user = FIRAuth.auth()!.currentUser!
+            FIRDatabase.database().reference().child("status").child(user.uid).setValue(Constants.statusOffline)
+        } else {
+            triggerTimerNotification()
+        }
         let entity : TimerLogEntity = getTimerLogEntity()
         entity.setValue(MyTimerLog.log.key, forKey: "key")
         entity.setValue(MyTimerLog.log.interval, forKey: "interval")
@@ -37,13 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         entity.setValue(MyTimerLog.log.timeStamp, forKey: "timeStamp")
         entity.setValue(MyTimerLog.log.pausedInterval, forKey: "pausedInterval")
         entity.setValue(MyTimerLog.log.isPaused, forKey: "isPaused")
-        print(MyTimerLog.log.isPaused)
         
         self.saveContext()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        
+        removeTimerNotification()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -55,12 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MyTimerLog.log.timeStamp = entity.timeStamp!
         MyTimerLog.log.pausedInterval = entity.pausedInterval
         MyTimerLog.log.isPaused = entity.isPaused
-        print(MyTimerLog.log.isPaused)
-        
-        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        if MyTimerLog.log.isPaused {
+            let user = FIRAuth.auth()!.currentUser!
+            print(user.uid)
+            FIRDatabase.database().reference().child("status").child(user.uid).setValue(Constants.statusOffline)
+        }
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
@@ -151,6 +168,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         entity.setValue(false, forKey: "isPaused")
         
         return entity
+    }
+    
+    func triggerTimerNotification() {
+        
+        print("notification will be triggered in five seconds..Hold on tight")
+        let content = UNMutableNotificationContent()
+        content.title = "Just checking in 🙏"
+        content.subtitle = "Timer running. Still chanting?"
+        content.body = "Ignore this if you are still chanting 😊"
+        content.sound = UNNotificationSound.default()
+        
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5.0, repeats: false)
+        let request = UNNotificationRequest(identifier:MyTimerLog.requestTimerIdentifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().add(request){(error) in
+            if (error != nil){
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
+    func removeTimerNotification() {
+        
+        print("Removed all pending notifications")
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [MyTimerLog.requestTimerIdentifier])
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        print("Tapped in notification")
+    }
+    
+    //This is key callback to present notification while the app is in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("Notification being triggered")
+        //You can either present alert ,sound or increase badge while the app is in foreground too with ios 10
+        //to distinguish between notifications
+        if notification.request.identifier == MyTimerLog.requestTimerIdentifier {
+            
+            completionHandler( [.alert,.sound,.badge])
+            
+        }
     }
 }
 

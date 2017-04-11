@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var allPeople: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var chanting : [String:String] = [:]
+    var statuses : [String:NSMutableDictionary] = [:]
     var friends : [NSDictionary] = []
     
     override func viewDidLoad() {
@@ -25,25 +25,54 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         
+        statuses[Constants.statusChanting] = NSMutableDictionary()
+        statuses[Constants.statusOnline] = NSMutableDictionary()
+        statuses[Constants.statusOffline] = NSMutableDictionary()
+        
+        
         FIRDatabase.database().reference().child("status").observe(FIRDataEventType.childAdded, with: { (snapshot) in
             if snapshot.exists() {
                 let status = snapshot.value as! String
-                if status == "chanting" {
-                    self.chanting[snapshot.key] = status
+                switch status {
+                case  Constants.statusChanting :
+                    self.statuses[Constants.statusChanting]?.setValue(snapshot.value, forKey: snapshot.key)
+                    break
+                case Constants.statusOnline :
+                    self.statuses[Constants.statusOnline]?.setValue(snapshot.value, forKey: snapshot.key)
+                    break
+                case Constants.statusOffline :
+                    self.statuses[Constants.statusOffline]?.setValue(snapshot.value, forKey: snapshot.key)
+                    break
+                default:
+                    break
                 }
-                self.allPeople.text = "\(self.chanting.count)"
+                self.allPeople.text = "\((self.statuses[Constants.statusChanting]?.count)!)"
                 self.tableView.reloadData()
             }
         })
         FIRDatabase.database().reference().child("status").observe(FIRDataEventType.childChanged, with: { (snapshot) in
             if snapshot.exists() {
                 let status = snapshot.value as! String
-                if status == "chanting" {
-                    self.chanting[snapshot.key] = snapshot.value as? String
-                } else if status == "online" || status == "offline" {
-                    self.chanting.removeValue(forKey: snapshot.key)
+                switch status {
+                case  Constants.statusChanting :
+                    self.statuses[Constants.statusChanting]?.setValue(snapshot.value, forKey: snapshot.key)
+                    self.statuses[Constants.statusOnline]?.removeObject(forKey: snapshot.key)
+                    self.statuses[Constants.statusOffline]?.removeObject(forKey: snapshot.key)
+                    break
+                case Constants.statusOnline :
+                    self.statuses[Constants.statusChanting]?.removeObject(forKey: snapshot.key)
+                    self.statuses[Constants.statusOnline]?.setValue(snapshot.value, forKey: snapshot.key)
+                    self.statuses[Constants.statusOffline]?.removeObject(forKey: snapshot.key)
+                    break
+                case Constants.statusOffline :
+                    self.statuses[Constants.statusChanting]?.removeObject(forKey: snapshot.key)
+                    self.statuses[Constants.statusOnline]?.removeObject(forKey: snapshot.key)
+                    self.statuses[Constants.statusOffline]?.setValue(snapshot.value, forKey: snapshot.key)
+                    break
+                default:
+                    break
                 }
-                self.allPeople.text = "\(self.chanting.count)"
+                self.allPeople.text = "\((self.statuses[Constants.statusChanting]?.count)!)"
                 self.tableView.reloadData()
             }
         })
@@ -70,9 +99,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "maincell", for: indexPath) as! MainCell
         let uid = self.friends[indexPath.row]["uid"] as! String
         let name = self.friends[indexPath.row]["name"] as! String
-        var status = "online"
-        if self.chanting[uid] != nil {
-            status = "chanting"
+        var status = Constants.statusOffline
+        if self.statuses[Constants.statusChanting]?.object(forKey: uid) != nil {
+            status = Constants.statusChanting
+        } else if self.statuses[Constants.statusOnline]?.object(forKey: uid) != nil {
+            status = Constants.statusOnline
         }
         cell.updateName(name: name)
         cell.updateStatus(status: status)

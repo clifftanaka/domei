@@ -31,7 +31,7 @@ class MainCell: UITableViewCell {
             break;
         case "offline" :
             self.statusLabel.text = "●"
-            self.statusLabel.textColor = Constants.timerRed
+            self.statusLabel.textColor = Constants.timerGrey
             break;
         case "chanting" :
             self.statusLabel.text = "🙏"

@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import UserNotifications
+import UserNotificationsUI
 
 class TimerViewController: UIViewController {
     
@@ -28,8 +30,6 @@ class TimerViewController: UIViewController {
     
     var timerLog : TimerLog = TimerLog()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,11 +37,6 @@ class TimerViewController: UIViewController {
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         
         if MyTimerLog.log.startTime > 0.0 {
-            print(MyTimerLog.log.startTime)
-            print(MyTimerLog.log.pausedInterval)
-            print(MyTimerLog.log.pausedTime)
-            print(MyTimerLog.log.isPaused)
-            
             if MyTimerLog.log.isPaused {
                 updatePaused(true)
                 status = Constants.statusStopped

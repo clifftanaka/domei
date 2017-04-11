@@ -9,6 +9,10 @@
 import UIKit
 
 struct Constants {
+    static let statusChanting = "chanting"
+    static let statusOnline = "online"
+    static let statusOffline = "offline"
+    
     static let statusReset = 0
     static let statusStarted = 1
     static let statusStopped = 2

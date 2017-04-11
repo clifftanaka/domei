@@ -11,6 +11,9 @@ import Foundation
 class MyTimerLog {
     static var log : TimerLog = TimerLog()
     
+    static let requestTimerIdentifier = "timerRequest"
+    
+    
     static func reset() {
         MyTimerLog.log.isPaused = false
         MyTimerLog.log.interval = 0.0
