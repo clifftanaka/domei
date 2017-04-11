@@ -28,8 +28,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         statuses[Constants.statusChanting] = NSMutableDictionary()
         statuses[Constants.statusOnline] = NSMutableDictionary()
         statuses[Constants.statusOffline] = NSMutableDictionary()
-        
-        
+
         FIRDatabase.database().reference().child("status").observe(FIRDataEventType.childAdded, with: { (snapshot) in
             if snapshot.exists() {
                 let status = snapshot.value as! String

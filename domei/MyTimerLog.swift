@@ -10,7 +10,9 @@ import Foundation
 
 class MyTimerLog {
     static var log : TimerLog = TimerLog()
-    
+    static var totalTime : TimeInterval = TimeInterval()
+    static var goalInterval : TimeInterval = TimeInterval()
+
     static let requestTimerIdentifier = "timerRequest"
     
     

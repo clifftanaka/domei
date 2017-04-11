@@ -44,4 +44,8 @@ class Util {
         dateFormatter.dateFormat = "yyyy MM dd"
         return dateFormatter.string(from: d)
     }
+    
+    static func isRightIntervalGreater(left: TimeInterval, right: TimeInterval) -> Bool{
+        return left.isLessThanOrEqualTo(right)
+    }
 }

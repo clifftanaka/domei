@@ -43,7 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let user = FIRAuth.auth()!.currentUser!
             FIRDatabase.database().reference().child("status").child(user.uid).setValue(Constants.statusOffline)
         } else {
-            triggerTimerNotification()
+            let remaining = MyTimerLog.goalInterval - MyTimerLog.totalTime
+            print(remaining)
+            if remaining > 0.0  {
+                triggerTimerNotification(content: Constants.timerGoalReachedNotification(), interval: remaining)
+            } else {
+                triggerTimerNotification(content: Constants.timerReminderNotification(), interval: 5)
+            }
         }
         let entity : TimerLogEntity = getTimerLogEntity()
         entity.setValue(MyTimerLog.log.key, forKey: "key")
@@ -170,17 +176,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return entity
     }
     
-    func triggerTimerNotification() {
+    func triggerTimerNotification(content: UNMutableNotificationContent, interval: TimeInterval) {
         
         print("notification will be triggered in five seconds..Hold on tight")
-        let content = UNMutableNotificationContent()
-        content.title = "Just checking in 🙏"
-        content.subtitle = "Timer running. Still chanting?"
-        content.body = "Ignore this if you are still chanting 😊"
-        content.sound = UNNotificationSound.default()
+        
         
         // Deliver the notification in five seconds.
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5.0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: interval, repeats: false)
         let request = UNNotificationRequest(identifier:MyTimerLog.requestTimerIdentifier, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().delegate = self

@@ -106,5 +106,28 @@ extension UIButton {
             
         }
     }
+    
+    func updateInfinitiButton (isSelected: Bool) {
+        
+        self.layer.cornerRadius = 0.5 * self.bounds.size.width
+        
+        if isSelected {
+            //title
+            self.setTitleColor(Constants.timerBlue, for: UIControlState.normal)
+            //background
+            self.backgroundColor = UIColor.white
+            //border
+            self.layer.borderWidth = 1.0
+            self.layer.borderColor = UIColor.white.cgColor
+        } else {
+            //title
+            self.setTitleColor(UIColor.darkGray, for: UIControlState.normal)
+            //background
+            self.backgroundColor = Constants.timerDarkGrey
+            //border
+            self.layer.borderWidth = 1.0
+            self.layer.borderColor = UIColor.darkGray.cgColor
+        }
+    }
 
 }
