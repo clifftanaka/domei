@@ -32,7 +32,7 @@ struct Constants {
     static func timerReminderNotification() -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Just checking in 🙏"
-        content.subtitle = "Timer running. Still chanting?"
+        content.subtitle = "Your timer is currently running. Are you still chanting?"
         content.body = "Ignore this if you are still chanting 😊"
         content.sound = UNNotificationSound.default()
         return content
