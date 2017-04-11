@@ -57,7 +57,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             mins.append(i)
         }
         let user = FIRAuth.auth()!.currentUser!
-        FIRDatabase.database().reference().child("chantInterval").child(user.uid).observe(FIRDataEventType.value, with: { (snapshot) in
+        FIRDatabase.database().reference().child("goalInterval").child(user.uid).observe(FIRDataEventType.value, with: { (snapshot) in
             if snapshot.exists() {
                 MyTimerLog.goalInterval = TimeInterval(snapshot.value as! Double)
                 if MyTimerLog.goalInterval > 0.0 {
@@ -281,12 +281,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         showHideGoalLabel(goal: MyTimerLog.goalInterval, actual: MyTimerLog.totalTime)
         
-        let user = FIRAuth.auth()!.currentUser!
-        if MyTimerLog.goalInterval == 0.0 {
-            FIRDatabase.database().reference().child("chantInterval").child(user.uid).removeValue()
-        } else {
-            FIRDatabase.database().reference().child("chantInterval").child(user.uid).setValue(MyTimerLog.goalInterval)
-        }
+        updateGoalInterval(interval: MyTimerLog.goalInterval)
         
         var elapsedTime = MyTimerLog.goalInterval
         let hours = UInt8(elapsedTime / 3600.0)
@@ -299,23 +294,17 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         MyTimerLog.goalInterval = TimeInterval()
         if timerPicker.isUserInteractionEnabled {
             enableInfiniti()
-            let user = FIRAuth.auth()!.currentUser!
-            FIRDatabase.database().reference().child("chantInterval").child(user.uid).removeValue()
+            updateGoalInterval(interval: MyTimerLog.goalInterval)
             animateGoalLabel(text: "until the heart's desires")
         } else {
             disableInfiniti()
             MyTimerLog.goalInterval.add(getHourIntervalFromPicker())
             MyTimerLog.goalInterval.add(getMinIntervalFromPicker())
-            let user = FIRAuth.auth()!.currentUser!
             var elapsedTime = MyTimerLog.goalInterval
             let hours = UInt8(elapsedTime / 3600.0)
             elapsedTime -= (TimeInterval(hours) * 3600)
             let minutes = UInt8(elapsedTime / 60.0)
-            if MyTimerLog.goalInterval == 0.0 {
-                FIRDatabase.database().reference().child("chantInterval").child(user.uid).removeValue()
-            } else {
-                FIRDatabase.database().reference().child("chantInterval").child(user.uid).setValue(MyTimerLog.goalInterval)
-            }
+            updateGoalInterval(interval: MyTimerLog.goalInterval)
             animateGoalLabel(text: "\(hours) hours \(minutes) minutes")
         }
         showHideGoalLabel(goal: MyTimerLog.goalInterval, actual: MyTimerLog.totalTime)
@@ -359,5 +348,14 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         UIView.animate(withDuration: 2.0, animations: {
             self.setGoalLabel.alpha = 0.0
         })
+    }
+    
+    func updateGoalInterval(interval: TimeInterval) {
+        let user = FIRAuth.auth()!.currentUser!
+        if interval == 0.0 {
+            FIRDatabase.database().reference().child("goalInterval").child(user.uid).removeValue()
+        } else {
+            FIRDatabase.database().reference().child("goalInterval").child(user.uid).setValue(MyTimerLog.goalInterval)
+        }
     }
 }

@@ -1402,28 +1402,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-1y-o4q">
-                                                    <rect key="frame" x="23" y="9" width="300" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="ARo-Bk-gOb"/>
-                                                        <constraint firstAttribute="height" constant="25" id="shi-01-f4Q"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGX-e5-gqN">
-                                                    <rect key="frame" x="367" y="10" width="17" height="24"/>
+                                                    <rect key="frame" x="8" y="10" width="30" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="tna-D8-AWQ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.44618222689999998" green="1" blue="0.57218913140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwB-Pc-61B">
+                                                    <rect key="frame" x="363.66666666666674" y="12" width="42.333333333333314" height="21.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-1y-o4q">
+                                                    <rect key="frame" x="43" y="9.3333333333333357" width="250" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="ARo-Bk-gOb"/>
+                                                        <constraint firstAttribute="height" constant="25" id="shi-01-f4Q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="WwB-Pc-61B" firstAttribute="centerY" secondItem="ESn-wf-xZA" secondAttribute="centerY" id="8dd-L8-rqL"/>
                                                 <constraint firstItem="adz-1y-o4q" firstAttribute="centerY" secondItem="ESn-wf-xZA" secondAttribute="centerY" id="F4j-gK-1Fh"/>
+                                                <constraint firstItem="adz-1y-o4q" firstAttribute="leading" secondItem="HGX-e5-gqN" secondAttribute="trailing" constant="5" id="Ud2-BM-ESO"/>
                                                 <constraint firstItem="HGX-e5-gqN" firstAttribute="centerY" secondItem="ESn-wf-xZA" secondAttribute="centerY" id="fKa-R7-Psa"/>
-                                                <constraint firstAttribute="trailing" secondItem="HGX-e5-gqN" secondAttribute="trailing" constant="30" id="fUa-K1-yaA"/>
-                                                <constraint firstItem="adz-1y-o4q" firstAttribute="leading" secondItem="ESn-wf-xZA" secondAttribute="leadingMargin" constant="15" id="lUJ-lH-Dyo"/>
+                                                <constraint firstItem="WwB-Pc-61B" firstAttribute="trailing" secondItem="ESn-wf-xZA" secondAttribute="trailingMargin" id="hr1-bz-nbM"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="HGX-e5-gqN" secondAttribute="leading" id="y1j-pj-krA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
