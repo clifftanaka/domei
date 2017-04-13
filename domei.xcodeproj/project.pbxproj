@@ -42,6 +42,11 @@
 		91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4871E8AA9740022D220 /* Assets.xcassets */; };
 		91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */; };
 		91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4B41E8AAD570022D220 /* MainViewController.swift */; };
+		91D9B4D41E9F4EB000C209F2 /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D31E9F4EB000C209F2 /* PrayerViewController.swift */; };
+		91D9B4D61E9F4ED900C209F2 /* NewPrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D51E9F4ED900C209F2 /* NewPrayerViewController.swift */; };
+		91D9B4D81E9F528E00C209F2 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D71E9F528E00C209F2 /* Prayer.swift */; };
+		91D9B4DB1E9F54CB00C209F2 /* PrayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4DA1E9F54CB00C209F2 /* PrayerService.swift */; };
+		91D9B4DD1E9F5A0B00C209F2 /* PrayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4DC1E9F5A0B00C209F2 /* PrayerViewCell.swift */; };
 		91DA98AA1E8D028A00801C59 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA98A91E8D028A00801C59 /* CellView.xib */; };
 		91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AB1E8D02E200801C59 /* CellView.swift */; };
 		91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AD1E8D05E700801C59 /* LogViewController.swift */; };
@@ -93,6 +98,11 @@
 		91AFC4871E8AA9740022D220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AFC48A1E8AA9740022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AFC4B41E8AAD570022D220 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		91D9B4D31E9F4EB000C209F2 /* PrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
+		91D9B4D51E9F4ED900C209F2 /* NewPrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPrayerViewController.swift; sourceTree = "<group>"; };
+		91D9B4D71E9F528E00C209F2 /* Prayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		91D9B4DA1E9F54CB00C209F2 /* PrayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerService.swift; sourceTree = "<group>"; };
+		91D9B4DC1E9F5A0B00C209F2 /* PrayerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerViewCell.swift; sourceTree = "<group>"; };
 		91DA98A91E8D028A00801C59 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		91DA98AB1E8D02E200801C59 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		91DA98AD1E8D05E700801C59 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 				914CB2FA1E8F876300600FE3 /* TimerLog.swift */,
 				91AB8A6F1E954A6D00C09235 /* User.swift */,
 				91F769C61E96BACA006D5463 /* Status.swift */,
+				91D9B4D71E9F528E00C209F2 /* Prayer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -176,6 +187,8 @@
 				91AB8A751E95553F00C09235 /* ViewFriendsViewController.swift */,
 				9195A5DF1E95F228002F3EB2 /* EditUserViewController.swift */,
 				91F769C01E968250006D5463 /* HomeViewController.swift */,
+				91D9B4D31E9F4EB000C209F2 /* PrayerViewController.swift */,
+				91D9B4D51E9F4ED900C209F2 /* NewPrayerViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 				9195A5E31E966014002F3EB2 /* AddFriendViewCell.swift */,
 				91947B331E8CC9380083F268 /* TimerButton.swift */,
 				91F769C21E96835A006D5463 /* MainCell.swift */,
+				91D9B4DC1E9F5A0B00C209F2 /* PrayerViewCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -212,6 +226,7 @@
 		91AFC47C1E8AA9730022D220 /* domei */ = {
 			isa = PBXGroup;
 			children = (
+				91D9B4D91E9F54BF00C209F2 /* Service */,
 				9195A5E51E96601D002F3EB2 /* CustomCells */,
 				914CB2F91E8F875700600FE3 /* Models */,
 				91DA98A81E8D026100801C59 /* CalendarView */,
@@ -230,6 +245,14 @@
 				91AC72721E9BEE66005D9107 /* MyTimerLog.swift */,
 			);
 			path = domei;
+			sourceTree = "<group>";
+		};
+		91D9B4D91E9F54BF00C209F2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				91D9B4DA1E9F54CB00C209F2 /* PrayerService.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		91DA98A81E8D026100801C59 /* CalendarView */ = {
@@ -276,8 +299,8 @@
 				TargetAttributes = {
 					91AFC4791E8AA9730022D220 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JEQYEJ6K3Z;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = G3W4AN2SRP;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -387,6 +410,7 @@
 				9195A5E41E966014002F3EB2 /* AddFriendViewCell.swift in Sources */,
 				91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */,
 				91AB8A6E1E950C6800C09235 /* Util.swift in Sources */,
+				91D9B4D41E9F4EB000C209F2 /* PrayerViewController.swift in Sources */,
 				91AB8A721E9554EA00C09235 /* AddFriendViewController.swift in Sources */,
 				915D1C411E924ED800B790F7 /* CustomCell.swift in Sources */,
 				91947B341E8CC9380083F268 /* TimerButton.swift in Sources */,
@@ -397,15 +421,19 @@
 				9117005B1E94E74D0069CFF1 /* NewLogViewController.swift in Sources */,
 				91947B321E8CC5CD0083F268 /* Constants.swift in Sources */,
 				91AC72731E9BEE66005D9107 /* MyTimerLog.swift in Sources */,
+				91D9B4D61E9F4ED900C209F2 /* NewPrayerViewController.swift in Sources */,
 				91F769C71E96BACA006D5463 /* Status.swift in Sources */,
 				91AFC47E1E8AA9730022D220 /* AppDelegate.swift in Sources */,
 				914A19651E8B69D60065BC76 /* FUICustomEmailEntryViewController.swift in Sources */,
+				91D9B4DB1E9F54CB00C209F2 /* PrayerService.swift in Sources */,
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
 				91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */,
 				91F769C31E96835A006D5463 /* MainCell.swift in Sources */,
 				914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */,
 				91AB8A741E95551500C09235 /* UserViewController.swift in Sources */,
 				914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */,
+				91D9B4D81E9F528E00C209F2 /* Prayer.swift in Sources */,
+				91D9B4DD1E9F5A0B00C209F2 /* PrayerViewCell.swift in Sources */,
 				91AB8A701E954A6D00C09235 /* User.swift in Sources */,
 				91AB8A761E95553F00C09235 /* ViewFriendsViewController.swift in Sources */,
 			);
@@ -532,7 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
+				DEVELOPMENT_TEAM = G3W4AN2SRP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
@@ -541,6 +569,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d80e34a3-cca6-459b-bb46-9584a97b4e35";
+				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -551,7 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
-				DEVELOPMENT_TEAM = JEQYEJ6K3Z;
+				DEVELOPMENT_TEAM = G3W4AN2SRP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks",
@@ -560,6 +590,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9117bf43-943b-4e87-acab-11603b063cce";
+				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

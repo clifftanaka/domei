@@ -81,8 +81,6 @@ class LogViewController: UIViewController {
             
             self.loadList()
         })
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -208,8 +206,6 @@ extension  LogViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print(allData[indexPath.section].count)
-        print(allData[indexPath.section][indexPath.row].key)
         if editingStyle == UITableViewCellEditingStyle.delete {
             FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("timerLogs").child(allData[indexPath.section][indexPath.row].key).removeValue()
             allData[indexPath.section].remove(at: indexPath.row)

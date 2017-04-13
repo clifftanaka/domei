@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         } else {
             let remaining = MyTimerLog.goalInterval - MyTimerLog.totalTime
             print(remaining)
+            removeTimerNotification()
             if remaining > 0.0  {
                 triggerTimerNotification(content: Constants.timerGoalReachedNotification(), interval: remaining)
             } else {

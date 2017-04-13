@@ -188,6 +188,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             start()
             status = Constants.statusStarted
             updateStatus(status: "chanting")
+            updateGoalRemaining()
         } else if status == Constants.statusStarted {
             pause()
             status = Constants.statusStopped
@@ -196,6 +197,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             start()
             status = Constants.statusStarted
             updateStatus(status: "chanting")
+            updateGoalRemaining()
         }
         updateButtons()
     }
@@ -288,6 +290,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         elapsedTime -= (TimeInterval(hours) * 3600)
         let minutes = UInt8(elapsedTime / 60.0)
         animateGoalLabel(text: "\(hours) hours \(minutes) minutes")
+        updateGoalRemaining()
     }
     
     @IBAction func inifinitiTapped(_ sender: Any) {
@@ -308,6 +311,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             animateGoalLabel(text: "\(hours) hours \(minutes) minutes")
         }
         showHideGoalLabel(goal: MyTimerLog.goalInterval, actual: MyTimerLog.totalTime)
+        updateGoalRemaining()
     }
     
     func getHourIntervalFromPicker() -> Double {
@@ -352,10 +356,20 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func updateGoalInterval(interval: TimeInterval) {
         let user = FIRAuth.auth()!.currentUser!
-        if interval == 0.0 {
+        if interval <= 0.0 {
             FIRDatabase.database().reference().child("goalInterval").child(user.uid).removeValue()
         } else {
-            FIRDatabase.database().reference().child("goalInterval").child(user.uid).setValue(MyTimerLog.goalInterval)
+            FIRDatabase.database().reference().child("goalInterval").child(user.uid).setValue(interval)
+        }
+    }
+    
+    func updateGoalRemaining() {
+        let user = FIRAuth.auth()!.currentUser!
+        let interval = MyTimerLog.goalInterval - MyTimerLog.totalTime
+        if interval <= 0.0 {
+            FIRDatabase.database().reference().child("goalRemaining").child(user.uid).removeValue()
+        } else {
+            FIRDatabase.database().reference().child("goalRemaining").child(user.uid).setValue(interval)
         }
     }
 }

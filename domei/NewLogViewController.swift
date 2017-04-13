@@ -72,9 +72,7 @@ class NewLogViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             showAlert(title: title, message: "You are chanting too much! You can only chant 24 hours a day! You're \(limit) minutes over the limit")
         } else {
             logData(interval: newLogInterval, date: date)
-            dismiss(animated: true, completion: { 
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-            })
+            dismiss(animated: true, completion: nil)
         }
     }
     
