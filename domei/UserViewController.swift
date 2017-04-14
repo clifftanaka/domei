@@ -16,6 +16,9 @@ class UserViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numFriendsButton: UIButton!
+    @IBOutlet weak var editProfileButton: UIButton!
+    @IBOutlet weak var findFriendsButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var user : User = User()
     var myFriends : [NSDictionary] = []
@@ -24,6 +27,17 @@ class UserViewController: UIViewController, FUIAuthDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        editProfileButton.layer.borderColor = Constants.timerBlue.cgColor
+        editProfileButton.layer.borderWidth = 1.0
+        editProfileButton.layer.cornerRadius = 5.0
+        findFriendsButton.layer.borderColor = Constants.timerBlue.cgColor
+        findFriendsButton.layer.borderWidth = 1.0
+        findFriendsButton.layer.cornerRadius = 5.0
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.cornerRadius = 10.0
+        imageView.layer.masksToBounds = true
         
         let authUser = FIRAuth.auth()!.currentUser!
         FIRDatabase.database().reference().child("users").child(authUser.uid).child("user").observe(FIRDataEventType.value, with: { (snapshot) in
