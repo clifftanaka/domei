@@ -50,6 +50,7 @@
 		91DA98AA1E8D028A00801C59 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DA98A91E8D028A00801C59 /* CellView.xib */; };
 		91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AB1E8D02E200801C59 /* CellView.swift */; };
 		91DA98AE1E8D05E700801C59 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA98AD1E8D05E700801C59 /* LogViewController.swift */; };
+		91F013B61EA0B273002D9A64 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F013B51EA0B273002D9A64 /* UserNotifications.framework */; };
 		91F769C11E968250006D5463 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F769C01E968250006D5463 /* HomeViewController.swift */; };
 		91F769C31E96835A006D5463 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F769C21E96835A006D5463 /* MainCell.swift */; };
 		91F769C71E96BACA006D5463 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F769C61E96BACA006D5463 /* Status.swift */; };
@@ -106,6 +107,7 @@
 		91DA98A91E8D028A00801C59 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		91DA98AB1E8D02E200801C59 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		91DA98AD1E8D05E700801C59 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		91F013B51EA0B273002D9A64 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		91F769C01E968250006D5463 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		91F769C21E96835A006D5463 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		91F769C61E96BACA006D5463 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F013B61EA0B273002D9A64 /* UserNotifications.framework in Frameworks */,
 				EC4B0A9A3A1AF8C1ED026B8F /* Pods_domei.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +139,7 @@
 		8355E322A0FBFEDE45132D84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91F013B51EA0B273002D9A64 /* UserNotifications.framework */,
 				914A196F1E8B7A0B0065BC76 /* FirebaseAuthUI.framework */,
 				42CC45576B6A908A8719B2A1 /* Pods_domei.framework */,
 			);
@@ -303,6 +307,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -560,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3W4AN2SRP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,9 +575,9 @@
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.dev.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d80e34a3-cca6-459b-bb46-9584a97b4e35";
+				PROVISIONING_PROFILE = "1668f94b-e509-4767-a68e-55d195e3426c";
 				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
@@ -581,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = domei/domei.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G3W4AN2SRP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,9 +597,9 @@
 				);
 				INFOPLIST_FILE = domei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clifftanaka.domei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.dev.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9117bf43-943b-4e87-acab-11603b063cce";
+				PROVISIONING_PROFILE = "1668f94b-e509-4767-a68e-55d195e3426c";
 				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
