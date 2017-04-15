@@ -299,10 +299,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func handleTap(_ sender: UITapGestureRecognizer) {
-        if modalShadowView.isHidden {
-            hideSubView()
-        } else {
-            showSubView()
-        }
+        hideSubView()
     }
 }

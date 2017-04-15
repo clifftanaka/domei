@@ -581,7 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.dev.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1668f94b-e509-4767-a68e-55d195e3426c";
+				PROVISIONING_PROFILE = "d80e34a3-cca6-459b-bb46-9584a97b4e35";
 				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
@@ -603,7 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurifu.dev.domei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1668f94b-e509-4767-a68e-55d195e3426c";
+				PROVISIONING_PROFILE = "e9b9fcd7-57fc-44f2-beaf-256ef4a71c90";
 				PROVISIONING_PROFILE_SPECIFIER = domei_beta_1.1;
 				SWIFT_VERSION = 3.0;
 			};
