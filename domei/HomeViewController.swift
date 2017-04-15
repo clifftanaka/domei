@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chantButton: UIButton!
     @IBOutlet weak var cheerButton: UIButton!
     @IBOutlet weak var homeUserTableView: UITableView!
+    @IBOutlet weak var modalShadowView: UIView!
+    @IBOutlet weak var chantStatus: UILabel!
     
     var statuses : [String:NSMutableDictionary] = [:]
     var friends : [NSDictionary] = []
@@ -38,7 +40,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         homeUserTableView.dataSource = self
         homeUserTableView.delegate = self
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        modalShadowView.addGestureRecognizer(tap)
+        modalShadowView.isUserInteractionEnabled = true
         self.view.addSubview(homeUserView)
         setUpSubView()
         
@@ -165,7 +169,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if tableView == self.tableView {
             let uid = self.friends[indexPath.row]["uid"] as! String
             let name = self.friends[indexPath.row]["name"] as! String
-            setSubView(uid: uid, name: name)
+            var status = Constants.statusOffline
+            if self.statuses[Constants.statusChanting]?.object(forKey: uid) != nil {
+                status = Constants.statusChanting
+            } else if self.statuses[Constants.statusOnline]?.object(forKey: uid) != nil {
+                status = Constants.statusOnline
+            }
+            setSubView(uid: uid, name: name, status: status)
             showSubView()
             tableView.deselectRow(at: indexPath, animated: false)
         } else {
@@ -230,6 +240,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeUserView.layer.borderWidth = 1.0
         homeUserView.layer.borderColor = UIColor.lightGray.cgColor
         
+        modalShadowView.isHidden = true
+        
         closeButton.layer.cornerRadius = 5.0
         closeButton.layer.borderWidth = 1.0
         closeButton.layer.borderColor = Constants.timerBlue.cgColor
@@ -253,26 +265,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func hideSubView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.homeUserView.alpha = 0.0
-            self.homeUserView.alpha = 0.0
-            self.homeUserView.alpha = 0.0
+            self.modalShadowView.alpha = 0.0
         }) { (bool) in
             self.homeUserView.isHidden = true
+            self.modalShadowView.isHidden = true
         }
     }
+    
     
     func showSubView() {
-        self.homeUserView.isHidden = false
+        self.homeUserView.alpha = 0.0
+        self.modalShadowView.alpha = 0.0
+        homeUserView.isHidden = false
+        modalShadowView.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             self.homeUserView.alpha = 1.0
-            self.homeUserView.alpha = 1.0
-            self.homeUserView.alpha = 1.0
-        }) { (bool) in
-            
-        }
+            self.modalShadowView.alpha = 0.4
+        })
     }
     
-    func setSubView(uid: String, name: String) {
+    func setSubView(uid: String, name: String, status: String) {
         nameLabel.text = name
+        chantStatus.updateStatus(status: status)
         homePrayers = []
         if prayers[uid] != nil {
             homePrayers = prayers[uid]!
@@ -282,5 +296,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         hideSubView()
+    }
+    
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        if modalShadowView.isHidden {
+            hideSubView()
+        } else {
+            showSubView()
+        }
     }
 }

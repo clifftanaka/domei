@@ -42,6 +42,7 @@
 		91AFC4881E8AA9740022D220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4871E8AA9740022D220 /* Assets.xcassets */; };
 		91AFC48B1E8AA9740022D220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AFC4891E8AA9740022D220 /* LaunchScreen.storyboard */; };
 		91AFC4B51E8AAD570022D220 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFC4B41E8AAD570022D220 /* MainViewController.swift */; };
+		91D70F551EA1F5C6007BCB6A /* StatusUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D70F541EA1F5C6007BCB6A /* StatusUILabel.swift */; };
 		91D9B4D41E9F4EB000C209F2 /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D31E9F4EB000C209F2 /* PrayerViewController.swift */; };
 		91D9B4D61E9F4ED900C209F2 /* NewPrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D51E9F4ED900C209F2 /* NewPrayerViewController.swift */; };
 		91D9B4D81E9F528E00C209F2 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9B4D71E9F528E00C209F2 /* Prayer.swift */; };
@@ -99,6 +100,7 @@
 		91AFC4871E8AA9740022D220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91AFC48A1E8AA9740022D220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AFC4B41E8AAD570022D220 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		91D70F541EA1F5C6007BCB6A /* StatusUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUILabel.swift; sourceTree = "<group>"; };
 		91D9B4D31E9F4EB000C209F2 /* PrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
 		91D9B4D51E9F4ED900C209F2 /* NewPrayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPrayerViewController.swift; sourceTree = "<group>"; };
 		91D9B4D71E9F528E00C209F2 /* Prayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				91947B331E8CC9380083F268 /* TimerButton.swift */,
 				91F769C21E96835A006D5463 /* MainCell.swift */,
 				91D9B4DC1E9F5A0B00C209F2 /* PrayerViewCell.swift */,
+				91D70F541EA1F5C6007BCB6A /* StatusUILabel.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				91AFC4861E8AA9740022D220 /* domei.xcdatamodeld in Sources */,
 				91DA98AC1E8D02E200801C59 /* CellView.swift in Sources */,
 				91F769C31E96835A006D5463 /* MainCell.swift in Sources */,
+				91D70F551EA1F5C6007BCB6A /* StatusUILabel.swift in Sources */,
 				914A19611E8B69D60065BC76 /* FUIAuthViewController.swift in Sources */,
 				91AB8A741E95551500C09235 /* UserViewController.swift in Sources */,
 				914A196B1E8B69D60065BC76 /* FUICustomPasswordSignUpViewController.swift in Sources */,
